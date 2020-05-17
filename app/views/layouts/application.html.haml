@@ -8,4 +8,26 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    %p.navbar-text{align: :right}
+      - if user_signed_in?
+        Entrou com 
+        %strong= current_user.email
+        = link_to 'Editar', edit_user_registration_path
+        = link_to 'Sair', destroy_user_session_path,
+                          method: :delete
+      - else
+        = link_to 'Entrar', new_user_session_path
+        = link_to 'Cadastrar', new_user_registration_path
+
+      - if notice
+        %p.notice = notice
+      - if alert
+        %p.alert = alert
+    
+    %p.navbar-text{align: :left}
+      = link_to 'USPorts Hub', "#"
+      = link_to 'Reservar uma Quadra Esportiva', "#"
+      = link_to 'Encontrar uma Partida', "#"
+      = link_to 'About Us', "#"
+        
     = yield
