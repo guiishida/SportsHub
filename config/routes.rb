@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :facilities
+  resources :sports
   devise_for :users
   resources :users
   root 'home#index'
