@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe "facilities/new", type: :view do
   before(:each) do
     assign(:facility, Facility.new(
-      code: 1,
       name: "MyString",
-      type: ""
+      mode: "MyString",
+      sport: nil
     ))
   end
 
@@ -14,11 +14,11 @@ RSpec.describe "facilities/new", type: :view do
 
     assert_select "form[action=?][method=?]", facilities_path, "post" do
 
-      assert_select "input[name=?]", "facility[code]"
-
       assert_select "input[name=?]", "facility[name]"
 
-      assert_select "input[name=?]", "facility[type]"
+      assert_select "input[name=?]", "facility[mode]"
+
+      assert_select "input[name=?]", "facility[sport_id]"
     end
   end
 end

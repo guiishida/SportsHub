@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+  resources :bookings do
+    collection do
+      get 'getExistingBookings'
+    end
+  end
   resources :facilities
+  resources :timeslots
   resources :sports
   devise_for :users
   resources :users

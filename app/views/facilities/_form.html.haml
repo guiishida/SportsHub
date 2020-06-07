@@ -7,13 +7,13 @@
           %li= message
 
   .field
-    = f.label :code
-    = f.number_field :code
-  .field
     = f.label :name
     = f.text_field :name
   .field
-    = f.label :type
-    = f.text_field :type
+    = f.label :mode
+    = f.text_field :mode
+  .field
+    = f.label :sport
+    = f.collection_select :sport_id, Sport.order(:name), :id, :name, include_blank: true
   .actions
     = f.submit 'Save'

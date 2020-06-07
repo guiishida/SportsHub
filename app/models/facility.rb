@@ -1,3 +1,3 @@
 class Facility < ApplicationRecord
-    belongs_to :sport
+  belongs_to :sport
 end

@@ -3,9 +3,9 @@
 %table
   %thead
     %tr
-      %th Code
       %th Name
-      %th Type
+      %th Mode
+      %th Sport
       %th
       %th
       %th
@@ -13,9 +13,9 @@
   %tbody
     - @facilities.each do |facility|
       %tr
-        %td= facility.code
         %td= facility.name
-        %td= facility.type
+        %td= facility.mode
+        %td= facility.sport
         %td= link_to 'Show', facility
         %td= link_to 'Edit', edit_facility_path(facility)
         %td= link_to 'Destroy', facility, method: :delete, data: { confirm: 'Are you sure?' }

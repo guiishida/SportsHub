@@ -1,9 +1,9 @@
 class CreateFacilities < ActiveRecord::Migration[6.0]
   def change
     create_table :facilities do |t|
-      t.integer :code
       t.string :name
-      t.string :type
+      t.string :mode
+      t.references :sport, null: false, foreign_key: true
 
       t.timestamps
     end

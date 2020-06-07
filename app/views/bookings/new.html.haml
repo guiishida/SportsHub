@@ -1,0 +1,46 @@
+=javascript_pack_tag 'bookings'
+%h1 Nova Reserva
+= form_for @booking do |f|
+  - if @booking.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@booking.errors.count, "error")} prohibited this booking from being saved:"
+      %ul
+        - @booking.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :date
+    = f.date_select :date
+  .field
+    = f.label :sport
+    = f.collection_select :sport_id, Sport.order(:name), :id, :name, include_blank: true
+  .field
+    = f.label :facility
+    = f.grouped_collection_select :facility_id, Sport.order(:name), :facilities, :name, :id, :name, include_blank: true
+  .field
+    = f.hidden_field :status, value: "Booked"
+
+  %button.generate{type: 'button'} Generate Availability
+
+  .field
+    %table.availabilities{:border => 1}
+      %tr
+        %th Code
+        %th Start time
+        %th End time 
+        %th Status
+        %th TimeSlot Selection
+
+      - @timeslots.each do |timeslot|
+        %tr
+          %td= timeslot.code
+          %td= timeslot.start_time.strftime("%I:%M")
+          %td= timeslot.end_time.strftime("%I:%M") 
+          %td= "Available"
+          %td= radio_button("booking", "timeslot_id", timeslot.id)
+  %br
+  .actions
+    = f.submit 'Save'
+
+
+= link_to 'Back', bookings_path

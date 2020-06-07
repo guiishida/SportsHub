@@ -1,14 +1,14 @@
 %p#notice= notice
 
 %p
-  %b Code:
-  = @facility.code
-%p
   %b Name:
   = @facility.name
 %p
-  %b Type:
-  = @facility.type
+  %b Mode:
+  = @facility.mode
+%p
+  %b Sport:
+  = @facility.sport
 
 = link_to 'Edit', edit_facility_path(@facility)
 \|
