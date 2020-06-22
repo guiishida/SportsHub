@@ -10,7 +10,7 @@
 
   .field
     = f.label :date
-    = f.date_select :date
+    = f.date_select :date, :start_year => 2020, :order => [:day, :month, :year]
   .field
     = f.label :sport
     = f.collection_select :sport_id, Sport.order(:name), :id, :name, include_blank: true
@@ -20,24 +20,16 @@
   .field
     = f.hidden_field :status, value: "Booked"
 
+  %br
+  
   %button.generate{type: 'button'} Generate Availability
-
+  
+  %br
+  %br
+  
   .field
-    %table.availabilities{:border => 1}
-      %tr
-        %th Code
-        %th Start time
-        %th End time 
-        %th Status
-        %th TimeSlot Selection
-
-      - @timeslots.each do |timeslot|
-        %tr
-          %td= timeslot.code
-          %td= timeslot.start_time.strftime("%I:%M")
-          %td= timeslot.end_time.strftime("%I:%M") 
-          %td= "Available"
-          %td= radio_button("booking", "timeslot_id", timeslot.id)
+    %table#availabilities{:border => 1}
+      
   %br
   .actions
     = f.submit 'Save'

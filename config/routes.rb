@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :bookings do
     collection do
-      get 'getExistingBookings'
-    end
+      get 'getAvailableTimeslots'
+    end 
   end
   resources :facilities
   resources :timeslots

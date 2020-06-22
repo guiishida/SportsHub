@@ -65,10 +65,33 @@ class BookingsController < ApplicationController
     end
   end
 
-  def getExistingBookings
-    @selectedbookings = Booking.where(sport_id: params[:sport_id], facility_id: params[:facility_id])
+  def getAvailableTimeslots
+    @allTimeSlots = Timeslot.where(weekday: params[:weekday])
+    @existingBookings = Booking.where(sport_id: params[:sport_id], facility_id: params[:facility_id], date: params[:date]).order('timeslot_id')
+    availableTimeSlots = []
+    if @existingBookings.size == 0
+      @allTimeSlots.each do |singleTimeSlot|
+        myObj = {"code" => singleTimeSlot.code, "start_time" => singleTimeSlot.start_time.strftime("%I:%M"), "end_time" => singleTimeSlot.end_time.strftime("%I:%M"), "status" => "Available", "timeslot_id" => singleTimeSlot.id}
+        availableTimeSlots.push(myObj)
+      end
+    else
+      i = 0
+      @allTimeSlots.each do |singleTimeSlot|
+        if singleTimeSlot.id == @existingBookings[i].timeslot_id
+          myObj = {"code" => singleTimeSlot.code, "start_time" => singleTimeSlot.start_time.strftime("%I:%M"), "end_time" => singleTimeSlot.end_time.strftime("%I:%M"), "status" => "Booked", "timeslot_id" => singleTimeSlot.id}
+          availableTimeSlots.push(myObj)
+          i = i + 1
+          if i == @existingBookings.length()
+            i = i - 1
+          end
+        else
+          myObj = {"code" => singleTimeSlot.code, "start_time" => singleTimeSlot.start_time.strftime("%I:%M"), "end_time" => singleTimeSlot.end_time.strftime("%I:%M"), "status" => "Available", "timeslot_id" => singleTimeSlot.id}
+          availableTimeSlots.push(myObj)
+        end
+      end
+    end
     respond_to do |format|
-      format.json { render json: { results: @selectedbookings.map{ |u| { id: u.id, timeslot_id: u.timeslot_id } } } }
+      format.json { render json: availableTimeSlots }
     end
   end
 
@@ -81,9 +104,5 @@ class BookingsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def booking_params
       params.require(:booking).permit(:date, :status, :sport_id, :facility_id, :user_id, :timeslot_id)
-    end
-
-    def existingbooking_params
-      params.require(:booking).permit(:sport_id, :facility_id, :date)
     end
 end
