@@ -1,0 +1,20 @@
+%h1 New team
+
+= render 'form'
+
+-#
+  = form_with scope: :team, url: teams_path, local: true do |f|
+  = f.label :Teamname
+  = f.text_field :Teamname
+  = f.label :Date
+  = f.text_field :Date
+  = f.label :Schedulemin
+  = f.text_field :Schedulemin
+  = f.label :Schedulemax
+  = f.text_field :Schedulemax
+  = f.label :Sport
+  = f.text_field :Sport
+  = f.submit
+
+
+= link_to 'Back', teams_path

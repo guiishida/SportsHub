@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails SportsHub: test" uuid="59403d3f-5912-4b14-a0f8-1df33ae3b2be">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <schema-mapping />
+    </data-source>
+    <data-source name="Rails SportsHub: development" uuid="78394d3d-f19f-453b-bfe1-942f68efbea2">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <schema-mapping />
+    </data-source>
+    <data-source name="Rails SportsHub: production" uuid="2ea6dddf-4c03-47f7-b34c-35bbbf6f2cc9">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <user-name>SportsHub</user-name>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>

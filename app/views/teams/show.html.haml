@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Teamname:
+  = @team.teamname
+%p
+  %b Date:
+  = @team.date
+%p
+  %b Schedulemin:
+  = @team.schedulemin
+%p
+  %b Schedulemax:
+  = @team.schedulemax
+%p
+  %b Sport:
+  = @team.sport
+%p
+  %b People:
+  = @team.people
+
+= link_to 'Edit', edit_team_path(@team)
+
+= link_to 'Back', teams_path
