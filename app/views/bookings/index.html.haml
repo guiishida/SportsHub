@@ -1,0 +1,32 @@
+
+%h1 Minhas Reservas
+
+%table
+  %thead
+    %tr
+      %th Date
+      %th Status
+      %th Sport
+      %th Facility
+      %th Start Time
+      %th End Time
+      %th
+      %th
+      %th
+
+  %tbody
+    - current_user.bookings.each do |booking|
+      %tr
+        %td= booking.date
+        %td= booking.status
+        %td= booking.sport.name
+        %td= booking.facility.name
+        %td= booking.timeslot.start_time.strftime("%I:%M")
+        %td= booking.timeslot.end_time.strftime("%I:%M")
+        %td= link_to 'Show', booking
+        %td= link_to 'Edit', edit_booking_path(booking)
+        %td= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Booking', new_booking_path

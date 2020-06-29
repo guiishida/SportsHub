@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :bookings do
+    collection do
+      get 'getAvailableTimeslots'
+    end 
+  end
+  resources :facilities
+  resources :timeslots
+  resources :sports
   devise_for :users
   resources :users
   root 'home#index'

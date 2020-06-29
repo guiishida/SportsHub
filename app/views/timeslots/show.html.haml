@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Code:
+  = @timeslot.code
+%p
+  %b Weekday:
+  = @timeslot.weekday
+%p
+  %b Start time:
+  = @timeslot.start_time
+%p
+  %b End time:
+  = @timeslot.end_time
+
+= link_to 'Edit', edit_timeslot_path(@timeslot)
+\|
+= link_to 'Back', timeslots_path

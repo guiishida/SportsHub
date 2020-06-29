@@ -1,0 +1,27 @@
+%h1 Listing timeslots
+
+%table
+  %thead
+    %tr
+      %th Code
+      %th Weekday
+      %th Start time
+      %th End time
+      %th
+      %th
+      %th
+
+  %tbody
+    - @timeslots.each do |timeslot|
+      %tr
+        %td= timeslot.code
+        %td= timeslot.weekday
+        %td= timeslot.start_time
+        %td= timeslot.end_time
+        %td= link_to 'Show', timeslot
+        %td= link_to 'Edit', edit_timeslot_path(timeslot)
+        %td= link_to 'Destroy', timeslot, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Timeslot', new_timeslot_path
