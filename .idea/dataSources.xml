@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Rails SportsHub: production" uuid="a2add2e7-a2cc-4cf8-aacd-0d609cf6ce27">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/SportsHub_production</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails SportsHub: development" uuid="fe836ce0-df42-4167-9a57-0c22fd66aba3">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/SportsHub_development</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails SportsHub: test" uuid="fb284264-cbfa-4b1e-b054-567dc6d7f5ff">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/SportsHub_test</jdbc-url>
+    </data-source>
+  </component>
+</project>

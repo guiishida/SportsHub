@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 
   has_many :bookings
+  has_many :teams
 
   validates :name, presence: true
   validates :telephone, presence: true
