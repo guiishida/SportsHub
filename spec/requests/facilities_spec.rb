@@ -14,13 +14,13 @@
 
 RSpec.describe "/facilities", type: :request do
   # Facility. As you add validations to Facility, be sure to
-  # adjust the attributes here as well.
+  # adjust the attributes here as well. 
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {name: "Central Court", mode: "Outdoor", sport_id: (Sport.create!(code: 350, name: "Tennis")).id }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {name: nil, mode: nil, sport_id: nil}
   }
 
   describe "GET /index" do
@@ -85,14 +85,17 @@ RSpec.describe "/facilities", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        #skip("Add a hash of attributes valid for your model")
+        {name: "Phillip Chatrier", mode: "Outdoor", sport_id: (Sport.create!(code: 13, name: "Tennis")).id}
       }
 
       it "updates the requested facility" do
         facility = Facility.create! valid_attributes
         patch facility_url(facility), params: { facility: new_attributes }
         facility.reload
-        skip("Add assertions for updated state")
+        #skip("Add assertions for updated state")
+        expect(facility.name).to eq("Phillip Chatrier")
+        expect(facility.mode).to eq("Outdoor")
       end
 
       it "redirects to the facility" do

@@ -3,9 +3,12 @@ require 'rails_helper'
 RSpec.describe "facilities/edit", type: :view do
   before(:each) do
     @facility = assign(:facility, Facility.create!(
-      name: "MyString",
-      mode: "MyString",
-      sport: nil
+      name: "Rod Laver Arena",
+      mode: "Indoor",
+      sport: Sport.create!(
+          code: 12,
+          name: "Tennis"
+      )
     ))
   end
 
@@ -17,8 +20,7 @@ RSpec.describe "facilities/edit", type: :view do
       assert_select "input[name=?]", "facility[name]"
 
       assert_select "input[name=?]", "facility[mode]"
-
-      assert_select "input[name=?]", "facility[sport_id]"
+      
     end
   end
 end

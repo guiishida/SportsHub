@@ -4,7 +4,9 @@ RSpec.describe "timeslots/new", type: :view do
   before(:each) do
     assign(:timeslot, Timeslot.new(
       code: 1,
-      weekday: 1
+      weekday: 1,
+      start_time: "2000-01-01 22:00:00", 
+      end_time: "2000-01-01 22:30:00"
     ))
   end
 

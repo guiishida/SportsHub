@@ -16,11 +16,11 @@ RSpec.describe "/timeslots", type: :request do
   # Timeslot. As you add validations to Timeslot, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {code: 1, weekday: 1, start_time: "2000-01-01 22:05:52", end_time: "2000-01-01 22:05:52"}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {code: nil, weekday: nil, start_time: nil, end_time: nil}
   }
 
   describe "GET /index" do
@@ -85,14 +85,16 @@ RSpec.describe "/timeslots", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {code: 2, weekday: 2, start_time: "2000-01-01 23:05:52", end_time: "2000-01-01 23:30:52"}
       }
 
       it "updates the requested timeslot" do
         timeslot = Timeslot.create! valid_attributes
         patch timeslot_url(timeslot), params: { timeslot: new_attributes }
         timeslot.reload
-        skip("Add assertions for updated state")
+        expect(timeslot.code).to eq(2)
+        expect(timeslot.weekday).to eq(2)
+        expect(timeslot.start_time).to eq("2000-01-01 23:05:52")
       end
 
       it "redirects to the timeslot" do
