@@ -1,6 +1,56 @@
-%h1 Bem-vindos ao USPorts Hub!
+%body.landing
+  %section#banner
+    %h2 USPorts HUB
+    %p 
+      A plataforma para conectar a comunidade USP
+      %br/
+      nas práticas esportivas!
+    %ul.actions
+      %li
+        %a.button.btn.btn-light.special.big{:href => bookings_path} Reserve uma Quadra
 
-%h2 A plataforma para conectar a comunidade USP nas práticas esportivas! 
+  %section#one.wrapper.style1
+    .container{:class => "75%"}
+      .row{:class => "200%"}
+        .6u{:class => "12u$(medium)"}
+          %header.major
+            %h2 USPorts Hub
+            %p Uma iniciativa de conectar os praticantes de esporte da USP
+        %div{:class => "6u$ 12u$(medium)"}
+          %p.text-justify A platforma USPorts Hub foi desenvolvida pelos alunos Guilherme Tadashi Ishida e Lui Damanciani como projeto da disciplina MAC0218 - Técnicas de Programação 2. A disciplina tem como objetivo introduzir conceitos importantes na construção de software como serviço (saas) que são aplicados ao desenvolver o projeto. 
+          %p.text-justify A motivação por trás do USPorts Hub é a dificuldade em encontrar pessoas para praticar esportes fora do contexto das equipes de competição. O objetivo dessa platforma é conectar essas pessoas que desejam praticar esportes sem necessariamente integrar uma equipe, além de permitir também a reserva individual das quadras do CEPEUSP, o que facilita o planejamento e a organização das pessoas.
+
+  %section#four.wrapper.style3.special
+    .container
+      %header.major
+        %h2 Alguma Pergunta?
+        %h3#specific_color Estamos aqui para responder qualquer dúvida ou pergunta que você tiver!
+      %ul.actions
+        %li
+          %a.button.btn.btn-light.special.big{:href => page_path('contato')} Entrar em Contato
+
+  %footer#footer
+    .container
+      %ul.icons
+        %li
+          %a.icon{:href => "#"}
+            %i.fab.fa-facebook
+        %li
+          %a.icon{:href => "https://www.linkedin.com/in/guilhermeishida/"}
+            %i.fab.fa-linkedin
+        %li
+          %a.icon{:href => "https://github.com/guiishida/SportsHub"}
+            %i.fab.fa-github
+      %ul.copyright
+        %li © Powered by: Guilherme Ishida e Lui Damanciani
+          
+          
+
+      
+            
+            
+        
+
   
 
 

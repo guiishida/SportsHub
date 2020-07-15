@@ -1,38 +1,66 @@
-%br
-%h1 CEPEUSP
+%section#banner2
+  %h2 CEPEUSP
+  %p
+    Centro de Práticas Esportivas da 
+    %br/
+    Universidade de São Paulo
 
+%section#one.wrapper.style1
+  .container{:class => "75%"}
+    .row{:class => "200%"}
+      .6u{:class => "12u$(medium)"}
+        %header.major
+          %h2 MISSÃO DO CEPE
+      %div{:class => "6u$ 12u$(medium)"}
+        %p.text-justify O Centro de Práticas Esportivas da Universidade de São Paulo - Cepeusp foi criado com a finalidade de planejar, coordenar, executar e avaliar a prática de atividades físicas e esportivas de alunos, docentes, funcionários e respectivos dependentes.
+        %p.text-justify A missão do CEPEUSP é oferecer à comunidade universitária programas de educação física, esporte, recreação e oportunidade de prática voluntária de atividades físicas, visando ao bem-estar, à melhoria da qualidade de vida e à sua integração, estendendo à comunidade externa na medida de suas possibilidades.
 
-%p O Centro de Práticas Esportivas da Universidade de São Paulo - Cepeusp foi criado com a finalidade de planejar, coordenar, executar e avaliar a prática de atividades físicas e esportivas de alunos, docentes, funcionários e respectivos dependentes. 
-%br
+%section#two.wrapper.style2.special
+  .container
+    %header.major
+      %h2 Infraestrutura do CEPEUSP
+      %p.mt-1 Com uma área de 514.244 metros quadrados, o CEPEUSP dispõe de uma infraestrutura com quadras e equipamentos para a prática de diversas atividades físicas e esportivas.
+    .row{:class => "150%"}
+      .6u{:class => "12u$(xsmall)"}
+        .image.fit
+          =image_tag "cepe_infra.jpg"
+      %div{:class => "6u$ 12u$(xsmall)"}
+        %p 1 - Portarias I & II
+        %p 2 - Conjunto Aquático
+        %p 3 - Estádio
+        %p 4 - Campos de Futebol
+        %p 5 - Campo de Futebol Areia
+        %p 6 - Espaço Multiúso/Nuri
+        %p 7 - Vestiários, Lanchonete
+        %p 8 - Pista de Atletismo
+        %p 9 - Velódromo
+        %p 10 - Quadras Externas
+        %p 11 - Quadras Cobertas
+        %p 12 - Quadras de Tênis
+        %p 13 - Raia Olímpica
 
-%h2 Missão
-%p Oferecer à comunidade universitária programas de educação física, esporte, recreação e oportunidade de prática voluntária de atividades físicas, visando ao bem-estar, à melhoria da qualidade de vida e à sua integração, estendendo à comunidade externa na medida de suas possibilidades.
+%section#four.wrapper.style4.special
+  .container
+    %header.major
+      %h2 Interessadx na História do CEPEUSP?
+      %h3#specific_color Visite a página oficial do CEPEUSP para mais informações!
+    %ul.actions
+      %li
+        %a.button.btn.btn-light.special.big{:href => "http://www.cepe.usp.br/"} Ir para o site do CEPEUSP
 
-%br
+%footer#footer
+  .container
+    %ul.icons
+      %li
+        %a.icon{:href => "#"}
+          %i.fab.fa-facebook
+      %li
+        %a.icon{:href => "https://www.linkedin.com/in/guilhermeishida/"}
+          %i.fab.fa-linkedin
+      %li
+        %a.icon{:href => "https://github.com/guiishida/SportsHub"}
+          %i.fab.fa-github
+    %ul.copyright
+      %li © Powered by: Guilherme Ishida e Lui Damanciani
 
-%h2 Infraestrutura
-
-%p Com uma área de 514.244 metros quadrados, o CEPEUSP dispõe de uma infraestrutura com quadras e equipamentos para a prática de diversas atividades físicas e esportivas.
-%br
-=image_tag "cepe_infra.jpg"
-
-%p 1 - Portarias I & II
-%p 2 - Conjunto Aquático
-%p 3 - Estádio
-%p 4 - Campos de Futebol
-%p 5 - Campo de Futebol Areia
-%p 6 - Espaço Multiúso/Nuri
-%p 7 - Vestiários, Lanchonete
-%p 8 - Pista de Atletismo
-%p 9 - Velódromo
-%p 10 - Quadras Externas
-%p 11 - Quadras Cobertas
-%p 12 - Quadras de Tênis
-%p 13 - Raia Olímpica
-
-%br
-
-%h4 
-    Para mais informações, visite a página oficial do CEPEUSP: 
-    = link_to "http://www.cepe.usp.br/", "http://www.cepe.usp.br/", :target => "_blank"
 
