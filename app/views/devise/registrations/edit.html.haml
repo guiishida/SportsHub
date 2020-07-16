@@ -1,48 +1,51 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :name
-    %br/
-    = f.text_field :name
-  .field
-    = f.label :numeroUSP
-    %br/
-    = f.text_field :numeroUSP
-  .field
-    = f.label :telephone
-    %br/
-    = f.text_field :telephone
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
-  .field
-    = f.label :password
-    %i (leave blank if you don't want to change it)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-    - if @minimum_password_length
-      %br/
-      %em
-        = @minimum_password_length
-        characters minimum
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
-    %br/
-    = f.password_field :current_password, autocomplete: "current-password"
-  .actions
-    = f.submit "Update"
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "Back", :back
+.container-login100
+  .wrap-edituser
+    %span.login100-form-title.mt-3
+      Editar Usuário
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .wrap-input100.mt-3
+        .field.form-group
+          = f.label :name, class: "label-input100"
+          = f.text_field :name, class: "form-control"
+
+        .field.form-group
+          = f.label :numeroUSP, class: "label-input100"
+          = f.text_field :numeroUSP, class: "form-control"
+
+        .field.form-group
+          = f.label :telephone, class: "label-input100"
+          = f.text_field :telephone, class: "form-control"
+
+        .field.form-group
+          = f.label :email, class: "label-input100"
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"
+        - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+          %div
+            Currently waiting confirmation for: #{resource.unconfirmed_email}
+
+        .field.form-group
+          = f.label :password, class: "label-input100"
+          %i (se não quiser mudar, basta deixar em branco)
+          = f.password_field :password, autocomplete: "new-password", class: "form-control"
+          - if @minimum_password_length
+            %em.pl-1
+              = @minimum_password_length
+              caracteres no mínimo
+
+        .field.form-group
+          = f.label :password_confirmation, class: "label-input100"
+          = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control"
+
+        .field.form-group
+          = f.label :current_password, class: "label-input100"
+          %i (necessária para confirmar as mudanças)
+          = f.password_field :current_password, autocomplete: "current-password", class: "form-control"
+      .actions.wrap-input100.form-group.wrap-button_location.pt-1
+        = f.submit "Atualizar", class: "button btn btn-light special medium"
+    %span.login100-form-title.mt-4 
+      Cancelar Conta
+    .wrap-button_location.pt-3
+      =button_to "Apagar minha conta", registration_path(resource_name), :method => :delete, :confirm => "Are you sure?"
+    .pt-4
+      = link_to "Voltar à Página Anterior", :back
