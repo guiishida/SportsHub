@@ -1,0 +1,29 @@
+%section#one.wrapper.style1.special
+  .container
+    %header.major
+      %h2.pb-2 Gerenciar Reservas
+      %p.pt-1 Consulte seu Histórico de Reservas ou Efetue uma Nova Reserva!
+    .row{:class => "150%"}
+      .6u{:class => "12u$(xsmall)"}
+        %ul.actions
+          %li
+            %a.button.special.big{:href => new_booking_path} Reservar uma Quadra
+      %div{:class => "6u$ 12u$(xsmall)"}
+        %ul.actions
+          %li
+            %a.button.big{:href => bookings_path} Minhas Reservas
+%footer#footer
+  .container
+    %ul.icons
+      %li
+        %a.icon{:href => "#"}
+          %i.fab.fa-facebook
+      %li
+        %a.icon{:href => "https://www.linkedin.com/in/guilhermeishida/"}
+          %i.fab.fa-linkedin
+      %li
+        %a.icon{:href => "https://github.com/guiishida/SportsHub"}
+          %i.fab.fa-github
+    %ul.copyright
+      %li © Powered by: Guilherme Ishida e Lui Damanciani
+

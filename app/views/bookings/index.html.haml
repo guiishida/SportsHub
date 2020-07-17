@@ -1,32 +1,40 @@
 
-%h1 Minhas Reservas
+.myReservations
+  %h1 Minhas Reservas
 
-%table
-  %thead
-    %tr
-      %th Date
-      %th Status
-      %th Sport
-      %th Facility
-      %th Start Time
-      %th End Time
-      %th
-      %th
-      %th
-
-  %tbody
-    - current_user.bookings.each do |booking|
+  %table.table.table-bordered
+    %thead.thead-dark
       %tr
-        %td= booking.date
-        %td= booking.status
-        %td= booking.sport.name
-        %td= booking.facility.name
-        %td= booking.timeslot.start_time.strftime("%I:%M")
-        %td= booking.timeslot.end_time.strftime("%I:%M")
-        %td= link_to 'Show', booking
-        %td= link_to 'Edit', edit_booking_path(booking)
-        %td= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' }
+        %th Data
+        %th Status
+        %th Esporte
+        %th Local
+        %th Horário de Início
+        %th Horário de Término
+        %th
+    %br
+    %tbody
+      - current_user.bookings.order('date DESC').each do |booking|
+        -if booking.date < Date.today
+          %tr.past-reservations
+            %td= booking.date.strftime("%d/%m/%y")
+            %td= booking.status
+            %td= booking.sport.name
+            %td= booking.facility.name
+            %td= booking.timeslot.start_time.strftime("%I:%M")
+            %td= booking.timeslot.end_time.strftime("%I:%M")
+            %td.text-center= link_to 'Apagar', booking, method: :delete, data: { confirm: 'Você tem certeza? A operação não poderá ser desfeita.' }, class: "button btn btn-light small"
+        -else
+          %tr
+            %td= booking.date.strftime("%d/%m/%y")
+            %td= booking.status
+            %td= booking.sport.name
+            %td= booking.facility.name
+            %td= booking.timeslot.start_time.strftime("%I:%M")
+            %td= booking.timeslot.end_time.strftime("%I:%M")
+            %td.text-center= link_to 'Apagar', booking, method: :delete, data: { confirm: 'Você tem certeza? A operação não poderá ser desfeita.' }, class: "button btn btn-light small"
 
-%br
+  %br
 
-= link_to 'New Booking', new_booking_path
+  %a.button.btn.btn-light.special.big{:href => new_booking_path} Nova Reserva
+

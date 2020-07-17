@@ -1,38 +1,43 @@
 =javascript_pack_tag 'bookings'
-%h1 Nova Reserva
-= form_for @booking do |f|
-  - if @booking.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@booking.errors.count, "error")} prohibited this booking from being saved:"
-      %ul
-        - @booking.errors.full_messages.each do |message|
-          %li= message
+.container-booking
+  .wrap-booking
+    %span.login100-form-title.mt-3
+      Nova Reserva
+    = form_for @booking do |f|
+      - if @booking.errors.any?
+        .pt-4
+          #error_explanation.alert.alert-danger
+            %h2.text-center= "#{pluralize(@booking.errors.count, "error")} prohibited this booking from being saved:"
+            %ul
+              - @booking.errors.full_messages.each do |message|
+                %li= message
+      .wrap-input100.mt-4
+        .field.form-group
+          = f.label :date, class: "label-input100"
+          = f.date_select :date, :start_year => 2020, :order => [:day, :month, :year], class: "form-control"
+        .field.form-group
+          = f.label :sport, class: "label-input100"
+          = f.collection_select :sport_id, Sport.order(:name), :id, :name, include_blank: true, class: "form-control"
+        .field.form-group
+          = f.label :facility, class: "label-input100"
+          = f.grouped_collection_select :facility_id, Sport.order(:name), :facilities, :name, :id, :name, include_blank: true, class: "form-control"
+        .field
+          = f.hidden_field :status, value: "Booked"
 
-  .field
-    = f.label :date
-    = f.date_select :date, :start_year => 2020, :order => [:day, :month, :year]
-  .field
-    = f.label :sport
-    = f.collection_select :sport_id, Sport.order(:name), :id, :name, include_blank: true
-  .field
-    = f.label :facility
-    = f.grouped_collection_select :facility_id, Sport.order(:name), :facilities, :name, :id, :name, include_blank: true
-  .field
-    = f.hidden_field :status, value: "Booked"
+      %br
+      .actions.wrap-input100.form-group.wrap-button_location.pt-1
+        %button.generate{type: 'button', class: "button btn btn-light special medium"} Verificar Disponibilidade
+        
+      %br
+        
+      .field.form-group
+        %table.table.table-bordered#availabilities{:border => 1}
+            
+      %br
+      .actions.wrap-input100.form-group.wrap-button_location.pt-1
+        = f.submit 'Confirmar Reserva', class: "button btn btn-light special medium"
 
-  %br
-  
-  %button.generate{type: 'button'} Generate Availability
-  
-  %br
-  %br
-  
-  .field
-    %table#availabilities{:border => 1}
+      %a{:href => bookings_path} 
+        %i.fas.fa-arrow-alt-circle-left
+        Minhas Reservas
       
-  %br
-  .actions
-    = f.submit 'Save'
-
-
-= link_to 'Back', bookings_path

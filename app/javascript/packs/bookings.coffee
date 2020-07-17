@@ -51,17 +51,17 @@ generateTableHead =(table) ->
   row = thead.insertRow()
 
   th1 = document.createElement("th")
-  text1 = document.createTextNode("Code")
+  text1 = document.createTextNode("Código")
   th1.appendChild(text1)
   row.appendChild(th1)
 
   th2 = document.createElement("th")
-  text2 = document.createTextNode("Start Time")
+  text2 = document.createTextNode("Horário de Início")
   th2.appendChild(text2)
   row.appendChild(th2)
 
   th3 = document.createElement("th")
-  text3 = document.createTextNode("End Time")
+  text3 = document.createTextNode("Horário de Término")
   th3.appendChild(text3)
   row.appendChild(th3)
 
@@ -71,7 +71,7 @@ generateTableHead =(table) ->
   row.appendChild(th4)
 
   th5 = document.createElement("th")
-  text5 = document.createTextNode("TimeSlot Selection")
+  text5 = document.createTextNode("Seleção do Horário")
   th5.appendChild(text5)
   row.appendChild(th5)
 

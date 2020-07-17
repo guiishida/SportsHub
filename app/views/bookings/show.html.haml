@@ -1,24 +1,30 @@
-%p#notice= notice
+.container-booking
+  .wrap-login100
+    %span.login100-form-title.mt-3
+      Informações da Reserva
+    %p.pt-4
+      %b Date:
+      = @booking.date
+    %p
+      %b Status:
+      = @booking.status
+    %p
+      %b Sport:
+      = @booking.sport.name
+    %p
+      %b Facility:
+      = @booking.facility.name
+    %p
+      %b Start Time:
+      = @booking.timeslot.start_time.strftime("%I:%M")
+    %p
+      %b End Time:
+      = @booking.timeslot.end_time.strftime("%I:%M")
+    %p#notice= notice
 
-%p
-  %b Date:
-  = @booking.date
-%p
-  %b Status:
-  = @booking.status
-%p
-  %b Sport:
-  = @booking.sport.name
-%p
-  %b Facility:
-  = @booking.facility.name
-%p
-  %b Start Time:
-  = @booking.timeslot.start_time.strftime("%I:%M")
-%p
-  %b End Time:
-  = @booking.timeslot.end_time.strftime("%I:%M")
+    %a{:href => bookings_path} 
+      %i.fas.fa-arrow-alt-circle-left
+      Minhas Reservas
 
-= link_to 'Edit', edit_booking_path(@booking)
-\|
-= link_to 'Back', bookings_path
+      
+
