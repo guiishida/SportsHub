@@ -48,10 +48,6 @@
               %a.btn.btn-light{:href => new_user_session_path, :role => "button"} Entrar
             %li.nav-item
               %a.btn.btn-light{:href => new_user_registration_path, :role => "button"} Cadastrar
-
-        - if notice
-          %p.notice = notice
-        - if alert
-          %p.alert = alert
+        
         
     = yield
