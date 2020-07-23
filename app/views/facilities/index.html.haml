@@ -1,25 +1,33 @@
-%h1 Listing facilities
+.container2
+  %h1 Facilities
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Mode
-      %th Sport
-      %th
-      %th
-      %th
-
-  %tbody
-    - @facilities.each do |facility|
+  %table.table.table-bordered
+    %thead.thead-dark
       %tr
-        %td= facility.name
-        %td= facility.mode
-        %td= facility.sport
-        %td= link_to 'Show', facility
-        %td= link_to 'Edit', edit_facility_path(facility)
-        %td= link_to 'Destroy', facility, method: :delete, data: { confirm: 'Are you sure?' }
+        %th Name
+        %th Mode (Outdoor or Indoor)
+        %th Sport
+        %th
+        %th
+        %th
+    %br
+    %tbody
+      - @facilities.each do |facility|
+        %tr
+          %td= facility.name
+          %td= facility.mode
+          %td= facility.sport.name
+          %td.text-center= link_to 'Show', facility, class: "button btn btn-light small"
+          %td.text-center= link_to 'Edit', edit_facility_path(facility), class: "button btn btn-light small"
+          %td.text-center= link_to 'Apagar', facility, method: :delete, data: { confirm: 'Você tem certeza? A operação não poderá ser desfeita.' }, class: "button btn btn-light small"
 
-%br
+  %br
 
-= link_to 'New Facility', new_facility_path
+  %a.button.btn.btn-light.special.big{:href => new_facility_path} New Facility
+
+  %br 
+  %br
+
+  - if notice
+    %p.alert.alert-success#notice= notice
+

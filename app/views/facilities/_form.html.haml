@@ -1,19 +1,22 @@
 = form_for @facility do |f|
-  - if @facility.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@facility.errors.count, "error")} prohibited this facility from being saved:"
-      %ul
-        - @facility.errors.full_messages.each do |message|
-          %li= message
+  .pt-3
+    - if @facility.errors.any?
+      #error_explanation.alert.alert-danger
+        %h2= "#{pluralize(@facility.errors.count, "error")} prohibited this facility from being saved:"
+        %ul
+          - @facility.errors.full_messages.each do |message|
+            %li= message
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :mode
-    = f.text_field :mode
-  .field
-    = f.label :sport
-    = f.collection_select :sport_id, Sport.order(:name), :id, :name, include_blank: true
-  .actions
-    = f.submit 'Save'
+    .field.form-group
+      = f.label :name
+      = f.text_field :name, class: "form-control"
+    .field.form-group
+      = f.label :mode
+      = f.text_field :mode, class: "form-control"
+    .field.form-group
+      = f.label :sport
+      %br
+      = f.collection_select :sport_id, Sport.order(:name), :id, :name, class: "form-control"
+    %br
+    .actions
+      = f.submit 'Save', class: "button btn btn-light special medium"

@@ -26,9 +26,11 @@
           %li.nav-item
             %a.nav-link{:href => page_path('booking')} Reservar uma Quadra
           %li.nav-item
-            %a.nav-link{:href => "#"} Encontrar uma Partida
+            %a.nav-link{:href => '#'} Encontrar uma Partida
           %li.nav-item
             %a.nav-link{:href => page_path('contato')} Contato
+          %li.nav-item
+            %a.nav-link{:href => page_path('admin')} Espaço Admin
 
         %ul.navbar-nav.ml-auto.my-2
           - if user_signed_in?

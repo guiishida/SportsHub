@@ -1,5 +1,5 @@
 
-.myReservations
+.container2
   %h1 Minhas Reservas
 
   %table.table.table-bordered
@@ -38,3 +38,8 @@
 
   %a.button.btn.btn-light.special.big{:href => new_booking_path} Nova Reserva
 
+  %br 
+  %br
+
+  - if notice
+    %p.alert.alert-success#notice= notice

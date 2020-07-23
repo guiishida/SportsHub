@@ -1,7 +1,11 @@
-%h1 Editing facility
+.container2
+  
+  %h1 Edit Facility
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Show', @facility
-\|
-= link_to 'Back', facilities_path
+  .pt-4
+    %a{:href => facilities_path} 
+      %i.fas.fa-arrow-alt-circle-left
+      Voltar
+    
