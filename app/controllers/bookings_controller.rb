@@ -71,21 +71,21 @@ class BookingsController < ApplicationController
     availableTimeSlots = []
     if @existingBookings.size == 0
       @allTimeSlots.each do |singleTimeSlot|
-        myObj = {"code" => singleTimeSlot.code, "start_time" => singleTimeSlot.start_time.strftime("%I:%M"), "end_time" => singleTimeSlot.end_time.strftime("%I:%M"), "status" => "Available", "timeslot_id" => singleTimeSlot.id}
+        myObj = {"code" => singleTimeSlot.code, "start_time" => singleTimeSlot.start_time.strftime("%H:%M"), "end_time" => singleTimeSlot.end_time.strftime("%H:%M"), "status" => "Available", "timeslot_id" => singleTimeSlot.id}
         availableTimeSlots.push(myObj)
       end
     else
       i = 0
       @allTimeSlots.each do |singleTimeSlot|
         if singleTimeSlot.id == @existingBookings[i].timeslot_id
-          myObj = {"code" => singleTimeSlot.code, "start_time" => singleTimeSlot.start_time.strftime("%I:%M"), "end_time" => singleTimeSlot.end_time.strftime("%I:%M"), "status" => "Booked", "timeslot_id" => singleTimeSlot.id}
+          myObj = {"code" => singleTimeSlot.code, "start_time" => singleTimeSlot.start_time.strftime("%H:%M"), "end_time" => singleTimeSlot.end_time.strftime("%H:%M"), "status" => "Booked", "timeslot_id" => singleTimeSlot.id}
           availableTimeSlots.push(myObj)
           i = i + 1
           if i == @existingBookings.length()
             i = i - 1
           end
         else
-          myObj = {"code" => singleTimeSlot.code, "start_time" => singleTimeSlot.start_time.strftime("%I:%M"), "end_time" => singleTimeSlot.end_time.strftime("%I:%M"), "status" => "Available", "timeslot_id" => singleTimeSlot.id}
+          myObj = {"code" => singleTimeSlot.code, "start_time" => singleTimeSlot.start_time.strftime("%H:%M"), "end_time" => singleTimeSlot.end_time.strftime("%H:%M"), "status" => "Available", "timeslot_id" => singleTimeSlot.id}
           availableTimeSlots.push(myObj)
         end
       end

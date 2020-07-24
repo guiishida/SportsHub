@@ -21,8 +21,8 @@
             %td= booking.status
             %td= booking.sport.name
             %td= booking.facility.name
-            %td= booking.timeslot.start_time.strftime("%I:%M")
-            %td= booking.timeslot.end_time.strftime("%I:%M")
+            %td= booking.timeslot.start_time.strftime("%H:%M")
+            %td= booking.timeslot.end_time.strftime("%H:%M")
             %td.text-center= link_to 'Apagar', booking, method: :delete, data: { confirm: 'Você tem certeza? A operação não poderá ser desfeita.' }, class: "button btn btn-light small"
         -else
           %tr
@@ -30,8 +30,8 @@
             %td= booking.status
             %td= booking.sport.name
             %td= booking.facility.name
-            %td= booking.timeslot.start_time.strftime("%I:%M")
-            %td= booking.timeslot.end_time.strftime("%I:%M")
+            %td= booking.timeslot.start_time.strftime("%H:%M")
+            %td= booking.timeslot.end_time.strftime("%H:%M")
             %td.text-center= link_to 'Apagar', booking, method: :delete, data: { confirm: 'Você tem certeza? A operação não poderá ser desfeita.' }, class: "button btn btn-light small"
 
   %br

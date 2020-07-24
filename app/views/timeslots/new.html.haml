@@ -1,5 +1,10 @@
-%h1 New timeslot
+.container2
 
-= render 'form'
+  %h1 New Timeslot
 
-= link_to 'Back', timeslots_path
+  = render 'form'
+
+  .pt-4
+    %a{:href => timeslots_path} 
+      %i.fas.fa-arrow-alt-circle-left
+      Voltar

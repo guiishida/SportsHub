@@ -12,10 +12,10 @@
     = @timeslot.weekday
   %p
     %b Start time:
-    = @timeslot.start_time.strftime("%I:%M")
+    = @timeslot.start_time.strftime("%H:%M")
   %p
     %b End time:
-    = @timeslot.end_time.strftime("%I:%M")
+    = @timeslot.end_time.strftime("%H:%M")
 
   %a.button.small{:href => edit_timeslot_path(@timeslot)} Editar
 

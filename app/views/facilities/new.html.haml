@@ -1,5 +1,10 @@
-%h1 New facility
+.container2
 
-= render 'form'
+  %h1 New Facility
 
-= link_to 'Back', facilities_path
+  = render 'form'
+
+  .pt-4
+    %a{:href => facilities_path} 
+      %i.fas.fa-arrow-alt-circle-left
+      Voltar

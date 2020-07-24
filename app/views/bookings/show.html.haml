@@ -16,10 +16,10 @@
       = @booking.facility.name
     %p
       %b Start Time:
-      = @booking.timeslot.start_time.strftime("%I:%M")
+      = @booking.timeslot.start_time.strftime("%H:%M")
     %p
       %b End Time:
-      = @booking.timeslot.end_time.strftime("%I:%M")
+      = @booking.timeslot.end_time.strftime("%H:%M")
     %p#notice= notice
 
     %a{:href => bookings_path} 

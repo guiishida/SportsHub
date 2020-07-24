@@ -29,8 +29,10 @@
             %a.nav-link{:href => '#'} Encontrar uma Partida
           %li.nav-item
             %a.nav-link{:href => page_path('contato')} Contato
-          %li.nav-item
-            %a.nav-link{:href => page_path('admin')} Espaço Admin
+          - if user_signed_in?
+            -if current_user.email == "admin@sportshub.com.br"
+              %li.nav-item
+                %a.nav-link{:href => page_path('admin-space')} Espaço Admin
 
         %ul.navbar-nav.ml-auto.my-2
           - if user_signed_in?
