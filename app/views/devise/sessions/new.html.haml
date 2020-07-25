@@ -13,7 +13,7 @@
           = f.password_field :password, autocomplete: "current-password", class: "form-control"
         
         - if alert
-          %p.alert.alert-danger Email e/ou Senha Incorretos
+          %p.alert.alert-danger#alert= alert
 
       - if devise_mapping.rememberable?
         .field.wrap-input100.form-group.mb-2

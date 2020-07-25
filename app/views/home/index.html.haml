@@ -1,3 +1,5 @@
+- if notice
+  %p.flash-messages.alert.alert-success#notice= notice
 %body.landing
   %section#banner
     %h2 USPorts HUB
@@ -7,7 +9,7 @@
       nas práticas esportivas!
     %ul.actions
       %li
-        %a.button.btn.btn-light.special.big{:href => bookings_path} Reserve uma Quadra
+        %a.button.btn.btn-light.special.big{:href => new_booking_path} Reserve uma Quadra
 
   %section#one.wrapper.style1
     .container{:class => "75%"}

@@ -20,7 +20,9 @@
     %p
       %b End Time:
       = @booking.timeslot.end_time.strftime("%H:%M")
-    %p#notice= notice
+      
+    - if notice
+      %p.alert.alert-success#notice= notice
 
     %a{:href => bookings_path} 
       %i.fas.fa-arrow-alt-circle-left
