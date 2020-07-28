@@ -1,12 +1,12 @@
 .container2
-  %h1 Facilities
+  %h1= t('.title')
 
   %table.table.table-bordered
     %thead.thead-dark
       %tr
-        %th Name
-        %th Mode (Outdoor or Indoor)
-        %th Sport
+        %th= t('.name')
+        %th= t('.mode')
+        %th= t('.sport')
         %th
         %th
         %th
@@ -17,13 +17,13 @@
           %td= facility.name
           %td= facility.mode
           %td= facility.sport.name
-          %td.text-center= link_to 'Show', facility, class: "button btn btn-light small"
-          %td.text-center= link_to 'Edit', edit_facility_path(facility), class: "button btn btn-light small"
-          %td.text-center= link_to 'Apagar', facility, method: :delete, data: { confirm: 'Você tem certeza? A operação não poderá ser desfeita.' }, class: "button btn btn-light small"
+          %td.text-center= link_to t('common.show'), facility, class: "button btn btn-light small"
+          %td.text-center= link_to t('common.edit'), edit_facility_path(facility), class: "button btn btn-light small"
+          %td.text-center= link_to t('common.delete'), facility, method: :delete, data: { confirm: t('common.delete_confirmation') }, class: "button btn btn-light small"
 
   %br
 
-  %a.button.btn.btn-light.special.big{:href => new_facility_path} New Facility
+  %a.button.btn.btn-light.special.big{:href => new_facility_path}= t('facilities.new_facility')
 
   %br 
   %br

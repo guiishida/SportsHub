@@ -1,52 +1,52 @@
 %section#banner2
-  %h2 CEPEUSP
+  %h2= t('.cepeusp')
   %p
-    Centro de Práticas Esportivas da 
+    = t('.subtitle_1')
     %br/
-    Universidade de São Paulo
+    = t('.subtitle_2')
 
 %section#one.wrapper.style1
   .container{:class => "75%"}
     .row{:class => "200%"}
       .6u{:class => "12u$(medium)"}
         %header.major
-          %h2 MISSÃO DO CEPE
+          %h2= t('.mission')
       %div{:class => "6u$ 12u$(medium)"}
-        %p.text-justify O Centro de Práticas Esportivas da Universidade de São Paulo - Cepeusp foi criado com a finalidade de planejar, coordenar, executar e avaliar a prática de atividades físicas e esportivas de alunos, docentes, funcionários e respectivos dependentes.
-        %p.text-justify A missão do CEPEUSP é oferecer à comunidade universitária programas de educação física, esporte, recreação e oportunidade de prática voluntária de atividades físicas, visando ao bem-estar, à melhoria da qualidade de vida e à sua integração, estendendo à comunidade externa na medida de suas possibilidades.
+        %p.text-justify= t('.mission_text1')
+        %p.text-justify= t('.mission_text2') 
 
 %section#two.wrapper.style2.special
   .container
     %header.major
-      %h2 Infraestrutura do CEPEUSP
-      %p.mt-1 Com uma área de 514.244 metros quadrados, o CEPEUSP dispõe de uma infraestrutura com quadras e equipamentos para a prática de diversas atividades físicas e esportivas.
+      %h2= t('.infrastructure') 
+      %p.mt-1= t('.subtitle_5') 
     .row{:class => "150%"}
       .6u{:class => "12u$(xsmall)"}
         .image.fit
           =image_tag "cepe_infra.jpg"
       %div{:class => "6u$ 12u$(xsmall)"}
-        %p 1 - Portarias I & II
-        %p 2 - Conjunto Aquático
-        %p 3 - Estádio
-        %p 4 - Campos de Futebol
-        %p 5 - Campo de Futebol Areia
-        %p 6 - Espaço Multiúso/Nuri
-        %p 7 - Vestiários, Lanchonete
-        %p 8 - Pista de Atletismo
-        %p 9 - Velódromo
-        %p 10 - Quadras Externas
-        %p 11 - Quadras Cobertas
-        %p 12 - Quadras de Tênis
-        %p 13 - Raia Olímpica
+        %p= t('.gates') 
+        %p= t('.aquatics')  
+        %p= t('.stadium')  
+        %p= t('.football_field')  
+        %p= t('.beach_football_field')  
+        %p= t('.multiuse_space')  
+        %p= t('.changing_room') 
+        %p= t('.athletics')  
+        %p= t('.cycling')  
+        %p= t('.outdoor_courts')  
+        %p= t('.indoor_courts')  
+        %p= t('.tennis')  
+        %p= t('.lane')  
 
 %section#four.wrapper.style4.special
   .container
     %header.major
-      %h2 Interessadx na História do CEPEUSP?
-      %h3#specific_color Visite a página oficial do CEPEUSP para mais informações!
+      %h2= t('.more_info') 
+      %h3#specific_color= t('.subtitle_6') 
     %ul.actions
       %li
-        %a.button.btn.btn-light.special.big{:href => "http://www.cepe.usp.br/"} Ir para o site do CEPEUSP
+        %a.button.btn.btn-light.special.big{:href => "http://www.cepe.usp.br/"}= t('.go_to_cepe') 
 
 %footer#footer
   .container
@@ -61,6 +61,6 @@
         %a.icon{:href => "https://github.com/guiishida/SportsHub"}
           %i.fab.fa-github
     %ul.copyright
-      %li © Powered by: Guilherme Ishida e Lui Damianci
+      %li= t('powered_by')
 
 

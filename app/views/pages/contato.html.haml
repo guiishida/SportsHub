@@ -1,33 +1,33 @@
 %section#one.wrapper.style1
   .container{:class => "75%"}
     .row{:class => "200%"}
-      %h1 Contato
+      %h1= t('.title')
       .6u{:class => "12u$(medium)"}
-        %h2.mt-2 Endereço
+        %h2.mt-2= t('.address_label')
         %i.fas.fa-map-marker-alt 
-        Praça 02, Prof. Rubião Meira, 61 - Cidade Universitária, São Paulo, SP - CEP 05508 110
+        = t('.address_text')
 
         %br
         %br
         %br
 
-        %h2 Horário de Funcionamento do CEPEUSP
+        %h2= t('.opening_hours_label')
         %i.fas.fa-clock
-        Segunda a sexta-feira: 6h30 - 21h30
+        = t('.opening_week')
         %br
         %i.fas.fa-clock 
-        Sábado:  8h - 17h30
+        = t('.opening_saturday')
         %br
         %i.fas.fa-clock
-        Domingo: 8h - 17h
+        = t('.opening_sunday')
 
         %br
         %br
         %br
 
-        %h2 Email para Contato
+        %h2= t('.email_title')
         %i.fas.fa-envelope
-        cepeusp@usp.br
+        = t('.email')
 
 %footer#footer
   .container
@@ -42,4 +42,4 @@
         %a.icon{:href => "https://github.com/guiishida/SportsHub"}
           %i.fab.fa-github
     %ul.copyright
-      %li © Powered by: Guilherme Ishida e Lui Damianci
+      %li=t('powered_by')

@@ -2,23 +2,23 @@
   - if notice
     %p.alert.alert-success#notice= notice
 
-  %h1 Facility
+  %h1= t('.title')
 
   %p.pt-3
-    %b Name:
+    %b= t('.name')
     = @facility.name
   %p
-    %b Mode:
+    %b= t('.mode')
     = @facility.mode
   %p
-    %b Sport:
+    %b= t('.sport')
     = @facility.sport.name
 
-  %a.button.small{:href => edit_facility_path(@facility)} Editar
+  %a.button.small{:href => edit_facility_path(@facility)}= t('common.edit')
 
   %br
 
   .pt-4
     %a{:href => facilities_path} 
       %i.fas.fa-arrow-alt-circle-left
-      Voltar
+      = t('common.back')

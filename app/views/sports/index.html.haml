@@ -1,11 +1,11 @@
 .container2
-  %h1 Listing sports
+  %h1= t('.title')
 
   %table.table.table-bordered
     %thead.thead-dark
       %tr
-        %th Code
-        %th Name
+        %th= t('.code')
+        %th= t('.name')
         %th
         %th
         %th
@@ -15,13 +15,13 @@
         %tr
           %td= sport.code
           %td= sport.name
-          %td.text-center= link_to 'Show', sport, class: "button btn btn-light small"
-          %td.text-center= link_to 'Edit', edit_sport_path(sport), class: "button btn btn-light small"
-          %td.text-center= link_to 'Apagar', sport, method: :delete, data: { confirm: 'Você tem certeza? A operação não poderá ser desfeita.' }, class: "button btn btn-light small"
+          %td.text-center= link_to t('common.show'), sport, class: "button btn btn-light small"
+          %td.text-center= link_to t('common.edit'), edit_sport_path(sport), class: "button btn btn-light small"
+          %td.text-center= link_to t('common.delete'), sport, method: :delete, data: { confirm: t('common.delete_confirmation') }, class: "button btn btn-light small"
 
   %br
 
-  %a.button.btn.btn-light.special.big{:href => new_sport_path} New Sport
+  %a.button.btn.btn-light.special.big{:href => new_sport_path}= t('sports.new_sport')
 
   %br 
   %br

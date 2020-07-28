@@ -1,13 +1,13 @@
 .container2
-  %h1 Timeslots
+  %h1= t('.title')
 
   %table.table.table-bordered
     %thead.thead-dark
       %tr
-        %th Code
-        %th Weekday
-        %th Start time
-        %th End time
+        %th= t('.code')
+        %th= t('.weekday')
+        %th= t('.start_time')
+        %th= t('.end_time')
         %th
         %th
         %th
@@ -19,13 +19,13 @@
           %td= timeslot.weekday
           %td= timeslot.start_time.strftime("%H:%M")
           %td= timeslot.end_time.strftime("%H:%M")
-          %td.text-center= link_to 'Show', timeslot, class: "button btn btn-light small"
-          %td.text-center= link_to 'Edit', edit_timeslot_path(timeslot), class: "button btn btn-light small"
-          %td.text-center= link_to 'Apagar', timeslot, method: :delete, data: { confirm: 'Você tem certeza? A operação não poderá ser desfeita.' }, class: "button btn btn-light small"
+          %td.text-center= link_to t('common.show'), timeslot, class: "button btn btn-light small"
+          %td.text-center= link_to t('common.edit'), edit_timeslot_path(timeslot), class: "button btn btn-light small"
+          %td.text-center= link_to t('common.delete'), timeslot, method: :delete, data: { confirm: t('common.delete_confirmation') }, class: "button btn btn-light small"
 
   %br
 
-  %a.button.btn.btn-light.special.big{:href => new_timeslot_path} New Timeslot
+  %a.button.btn.btn-light.special.big{:href => new_timeslot_path}= t('timeslots.new_timeslot')
 
   %br 
   %br

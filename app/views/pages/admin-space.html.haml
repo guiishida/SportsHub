@@ -1,11 +1,11 @@
 %section#one.wrapper.style1.special
   .container
     %header.major
-      %h2.pb-2 Espaço Admin
-      %p.pt-1 Consulte e Crie novas entradas para Sports, Facilities e Timeslots
-    %a.button.button-admin.special.big{:href => sports_path} Sports
-    %a.pr-4.mr-4.pl-4.ml-4.button.button-admin.special.big{:href => facilities_path} Facilities
-    %a.button.button-admin.special.big{:href => timeslots_path} Timeslots
+      %h2.pb-2= t('.title')
+      %p.pt-2= t('.subtitle_8')
+    %a.button.button-admin.special.big{:href => sports_path}= t('.sports')
+    %a.pr-4.mr-4.pl-4.ml-4.button.button-admin.special.big{:href => facilities_path}= t('.facilities')
+    %a.button.button-admin.special.big{:href => timeslots_path}= t('.timeslots')
 
 %footer#footer
   .container
@@ -20,4 +20,4 @@
         %a.icon{:href => "https://github.com/guiishida/SportsHub"}
           %i.fab.fa-github
     %ul.copyright
-      %li © Powered by: Guilherme Ishida e Lui Damianci
+      %li=t('powered_by')

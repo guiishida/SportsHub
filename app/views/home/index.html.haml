@@ -2,34 +2,34 @@
   %p.flash-messages.alert.alert-success#notice= notice
 %body.landing
   %section#banner
-    %h2 USPorts HUB
+    %h2= t('.platform')
     %p 
-      A plataforma para conectar a comunidade USP
+      =t('.subtitle_1')
       %br/
-      nas práticas esportivas!
+      =t('.subtitle_2')
     %ul.actions
       %li
-        %a.button.btn.btn-light.special.big{:href => new_booking_path} Reserve uma Quadra
+        %a.button.btn.btn-light.special.big{:href => new_booking_path}= t('.book')
 
   %section#one.wrapper.style1
     .container{:class => "75%"}
       .row{:class => "200%"}
         .6u{:class => "12u$(medium)"}
           %header.major
-            %h2 USPorts Hub
-            %p Uma iniciativa de conectar os praticantes de esporte da USP
+            %h2= t('name')
+            %p= t('.subtitle_3')
         %div{:class => "6u$ 12u$(medium)"}
-          %p.text-justify A platforma USPorts Hub foi desenvolvida pelos alunos Guilherme Tadashi Ishida e Lui Damanciani como projeto da disciplina MAC0218 - Técnicas de Programação 2. A disciplina tem como objetivo introduzir conceitos importantes na construção de software como serviço (saas) que são aplicados ao desenvolver o projeto. 
-          %p.text-justify A motivação por trás do USPorts Hub é a dificuldade em encontrar pessoas para praticar esportes fora do contexto das equipes de competição. O objetivo dessa platforma é conectar essas pessoas que desejam praticar esportes sem necessariamente integrar uma equipe, além de permitir também a reserva individual das quadras do CEPEUSP, o que facilita o planejamento e a organização das pessoas.
+          %p.text-justify= t('.motivation_1')
+          %p.text-justify= t('.motivation_2')
 
   %section#two.wrapper.style3.special
     .container
       %header.major
-        %h2 Alguma Pergunta?
-        %h3#specific_color Estamos aqui para responder qualquer dúvida ou pergunta que você tiver!
+        %h2= t('.questions')
+        %h3#specific_color= t('.subtitle_4')
       %ul.actions
         %li
-          %a.button.btn.btn-light.special.big{:href => page_path('contato')} Entrar em Contato
+          %a.button.btn.btn-light.special.big{:href => page_path('contato')}= t('.contact_us')
 
   %footer#footer
     .container
@@ -44,7 +44,7 @@
           %a.icon{:href => "https://github.com/guiishida/SportsHub"}
             %i.fab.fa-github
       %ul.copyright
-        %li © Powered by: Guilherme Ishida e Lui Damianci
+        %li= t('powered_by')
           
           
 

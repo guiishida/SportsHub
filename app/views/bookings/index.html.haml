@@ -4,17 +4,17 @@
   - if notice
     %p.alert.alert-success#notice= notice
 
-  %h1 Minhas Reservas
+  %h1= t('bookings.reservations') 
 
   %table.table.table-bordered
     %thead.thead-dark
       %tr
-        %th Data
-        %th Status
-        %th Esporte
-        %th Local
-        %th Horário de Início
-        %th Horário de Término
+        %th= t('bookings.date') 
+        %th= t('bookings.status') 
+        %th= t('bookings.sport') 
+        %th= t('bookings.facility') 
+        %th= t('bookings.start_time') 
+        %th= t('bookings.end_time') 
         %th
     %br
     %tbody
@@ -27,7 +27,7 @@
             %td= booking.facility.name
             %td= booking.timeslot.start_time.strftime("%H:%M")
             %td= booking.timeslot.end_time.strftime("%H:%M")
-            %td.text-center= link_to 'Apagar', booking, method: :delete, data: { confirm: 'Você tem certeza? A operação não poderá ser desfeita.' }, class: "button btn btn-light small"
+            %td.text-center= link_to t('common.delete'), booking, method: :delete, data: { confirm: t('common.delete_confirmation') }, class: "button btn btn-light small"
         -else
           %tr
             %td= booking.date.strftime("%d/%m/%y")
@@ -36,11 +36,11 @@
             %td= booking.facility.name
             %td= booking.timeslot.start_time.strftime("%H:%M")
             %td= booking.timeslot.end_time.strftime("%H:%M")
-            %td.text-center= link_to 'Apagar', booking, method: :delete, data: { confirm: 'Você tem certeza? A operação não poderá ser desfeita.' }, class: "button btn btn-light small"
+            %td.text-center= link_to t('common.delete'), booking, method: :delete, data: { confirm: t('common.delete_confirmation') }, class: "button btn btn-light small"
 
   %br
 
-  %a.button.btn.btn-light.special.big{:href => new_booking_path} Nova Reserva
+  %a.button.btn.btn-light.special.big{:href => new_booking_path}= t('bookings.new_booking') 
 
   %br 
 

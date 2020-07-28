@@ -75,3 +75,6 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'font_awesome5_rails'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'jquery-rails'
+
+gem 'rails-i18n'
+gem 'flag-icons-rails'

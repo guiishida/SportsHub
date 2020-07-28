@@ -2,7 +2,7 @@
   .pt-3
     - if @facility.errors.any?
       #error_explanation.alert.alert-danger
-        %h2= "#{pluralize(@facility.errors.count, "error")} prohibited this facility from being saved:"
+        %h2= t 'facilities.errors', count: @facility.errors.count
         %ul
           - @facility.errors.full_messages.each do |message|
             %li= message
@@ -19,4 +19,4 @@
       = f.collection_select :sport_id, Sport.order(:name), :id, :name, class: "form-control"
     %br
     .actions
-      = f.submit 'Save', class: "button btn btn-light special medium"
+      = f.submit t('common.save'), class: "button btn btn-light special medium"

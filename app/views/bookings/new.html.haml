@@ -4,12 +4,12 @@
 .container-booking
   .wrap-booking
     %span.login100-form-title.mt-3
-      Nova Reserva
+      = t('bookings.new_booking')
     = form_for @booking do |f|
       - if @booking.errors.any?
         .pt-4
           #error_explanation.alert.alert-danger
-            %h2.text-center= "#{pluralize(@booking.errors.count, "error")} prohibited this booking from being saved:"
+            %h2.text-center= t 'bookings.errors', count: @booking.errors.count
             %ul
               - @booking.errors.full_messages.each do |message|
                 %li= message
@@ -28,7 +28,7 @@
 
       %br
       .actions.wrap-input100.form-group.wrap-button_location.pt-1
-        %button.generate{type: 'button', class: "button btn btn-light special medium"} Verificar Disponibilidade
+        %button.generate{type: 'button', class: "button btn btn-light special medium"}= t('.availability')
         
       %br
         
@@ -37,9 +37,9 @@
             
       %br
       .actions.wrap-input100.form-group.wrap-button_location.pt-1
-        = f.submit 'Confirmar Reserva', class: "button btn btn-light special medium"
+        = f.submit t('.confirm'), class: "button btn btn-light special medium"
 
       %a{:href => bookings_path} 
         %i.fas.fa-arrow-alt-circle-left
-        Minhas Reservas
+        = t('bookings.reservations') 
       

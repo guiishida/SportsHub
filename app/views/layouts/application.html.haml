@@ -11,7 +11,7 @@
     %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
       %a.navbar-brand{:href => home_index_path}
         %img.d-inline-block.align-top{:alt => "", :height => "30", :src => "#", :width => "30"}/
-        USPorts Hub
+        =t('name')
       %button.navbar-toggler{"aria-controls" => "navbarNavAltMarkup", "aria-expanded" => "false", "aria-label" => "Alterna navegação", "data-target" => "#navbarNavAltMarkup", "data-toggle" => "collapse", :type => "button"}
         %span.navbar-toggler-icon
       
@@ -19,38 +19,49 @@
         %ul.navbar-nav.mr-auto.my-1
           %li.nav-item.active
             %a.nav-link{:href => home_index_path}
-              Home
+              = t('navbar.home')
               %span.sr-only (Página atual)
           %li.nav-item
-            %a.nav-link{:href => page_path('cepe')} Informações CEPE
+            %a.nav-link{:href => page_path('cepe')}= t('navbar.cepe')
           %li.nav-item
-            %a.nav-link{:href => page_path('booking')} Reservar uma Quadra
+            %a.nav-link{:href => page_path('booking')}= t('navbar.booking')
           %li.nav-item
-            %a.nav-link{:href => '#'} Encontrar uma Partida
+            %a.nav-link{:href => '#'}= t('navbar.finder')
           %li.nav-item
-            %a.nav-link{:href => page_path('contato')} Contato
+            %a.nav-link{:href => page_path('contato')}= t('navbar.contact')
           - if user_signed_in?
             -if current_user.email == "admin@sportshub.com.br"
               %li.nav-item
-                %a.nav-link{:href => page_path('admin-space')} Espaço Admin
+                %a.nav-link{:href => page_path('admin-space')}= t('navbar.admin')
 
         %ul.navbar-nav.ml-auto.my-2
+
+          %li.nav-item.dropdown
+            %a#navbarDropdownMenuLink-4.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown"}
+              %i.fas.fa-globe-americas
+              = t('navbar.languages')
+            .dropdown-menu.dropdown-menu-right.dropdown-info{"aria-labelledby" => "navbarDropdownMenuLink-4"}
+              %a.dropdown-item{:href => root_path(locale: 'pt-BR')} 
+                = t('navbar.portuguese')
+              %a.dropdown-item{:href => root_path(locale: :en)} 
+                = t('navbar.english')  
+
           - if user_signed_in?
             %li.nav-item.dropdown
               %a#navbarDropdownMenuLink-4.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown"}
                 %i.fas.fa-user
-                Perfil
+                = t('navbar.profile')
               .dropdown-menu.dropdown-menu-right.dropdown-info{"aria-labelledby" => "navbarDropdownMenuLink-4"}
                 %a.dropdown-item{:href => edit_user_registration_path} 
                   %i.fas.fa-edit
-                  Editar Minha Conta
+                  = t('navbar.edit')
                 %a.dropdown-item{"data-method" => "delete", :href => destroy_user_session_path} 
                   %i.fas.fa-sign-out-alt
-                  Sair    
+                  = t('navbar.sign_out')    
           - else
             %li.nav-item.mr-3
-              %a.btn.btn-light{:href => new_user_session_path, :role => "button"} Entrar
+              %a.btn.btn-light{:href => new_user_session_path, :role => "button"}= t('navbar.sign_in')
             %li.nav-item
-              %a.btn.btn-light{:href => new_user_registration_path, :role => "button"} Cadastrar
+              %a.btn.btn-light{:href => new_user_registration_path, :role => "button"}= t('navbar.register')
 
     = yield

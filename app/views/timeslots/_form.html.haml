@@ -2,7 +2,7 @@
   .pt-3
     - if @timeslot.errors.any?
       #error_explanation.alert.alert-danger
-        %h2= "#{pluralize(@timeslot.errors.count, "error")} prohibited this timeslot from being saved:"
+        %h2= t 'timeslots.errors', count: @timeslot.errors.count
         %ul
           - @timeslot.errors.full_messages.each do |message|
             %li= message
@@ -23,4 +23,4 @@
       = f.time_select :end_time, class: "form-control"
     %br
     .actions
-      = f.submit 'Save', class: "button btn btn-light special medium"
+      = f.submit t('common.save'), class: "button btn btn-light special medium"

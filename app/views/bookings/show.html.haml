@@ -1,24 +1,24 @@
 .container-booking
   .wrap-login100
     %span.login100-form-title.mt-3
-      Informações da Reserva
+      = t('.info_reservation')
     %p.pt-4
-      %b Date:
-      = @booking.date
+      %b= t('.date')
+      = @booking.date.strftime("%d/%m/%y")
     %p
-      %b Status:
+      %b= t('.status')
       = @booking.status
     %p
-      %b Sport:
+      %b= t('.sport')
       = @booking.sport.name
     %p
-      %b Facility:
+      %b= t('.facility')
       = @booking.facility.name
     %p
-      %b Start Time:
+      %b= t('.start_time')
       = @booking.timeslot.start_time.strftime("%H:%M")
     %p
-      %b End Time:
+      %b= t('.end_time')
       = @booking.timeslot.end_time.strftime("%H:%M")
       
     - if notice
@@ -26,7 +26,7 @@
 
     %a{:href => bookings_path} 
       %i.fas.fa-arrow-alt-circle-left
-      Minhas Reservas
+      = t('bookings.reservations') 
 
       
 

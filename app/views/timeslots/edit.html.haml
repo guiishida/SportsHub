@@ -1,11 +1,11 @@
 .container2
 
-  %h1 Edit Timeslot
+  %h1= t('.title')
 
   = render 'form'
 
   .pt-4
     %a{:href => timeslots_path} 
       %i.fas.fa-arrow-alt-circle-left
-      Voltar
+      = t('common.back')
 

@@ -2,26 +2,26 @@
   - if notice
     %p.alert.alert-success#notice= notice
 
-  %h1 Timeslot
+  %h1= t('.title')
 
   %p.pt-3
-    %b Code:
+    %b= t('.code')
     = @timeslot.code
   %p
-    %b Weekday:
+    %b= t('.weekday')
     = @timeslot.weekday
   %p
-    %b Start time:
+    %b= t('.start_time')
     = @timeslot.start_time.strftime("%H:%M")
   %p
-    %b End time:
+    %b= t('.end_time')
     = @timeslot.end_time.strftime("%H:%M")
 
-  %a.button.small{:href => edit_timeslot_path(@timeslot)} Editar
+  %a.button.small{:href => edit_timeslot_path(@timeslot)}= t('common.edit')
 
   %br
 
   .pt-4
     %a{:href => timeslots_path} 
       %i.fas.fa-arrow-alt-circle-left
-      Voltar
+      = t('common.back')

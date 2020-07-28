@@ -2,7 +2,7 @@
   .pt-3
   - if @sport.errors.any?
     #error_explanation.alert.alert-danger
-      %h2= "#{pluralize(@sport.errors.count, "error")} prohibited this sport from being saved:"
+      %h2= t 'sports.errors', count: @sport.errors.count
       %ul
         - @sport.errors.full_messages.each do |message|
           %li= message
@@ -15,4 +15,4 @@
     = f.text_field :name, class: "form-control"
   %br
   .actions
-    = f.submit 'Save', class: "button btn btn-light special medium"
+    = f.submit t('common.save'), class: "button btn btn-light special medium"

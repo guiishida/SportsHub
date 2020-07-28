@@ -1,10 +1,10 @@
 .container2
 
-  %h1 New Sport
+  %h1= t('sports.new_sport')
 
   = render 'form'
 
   .pt-4
     %a{:href => sports_path} 
       %i.fas.fa-arrow-alt-circle-left
-      Voltar
+      = t('common.back')
