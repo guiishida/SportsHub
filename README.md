@@ -25,13 +25,13 @@ The setup steps expect following tools installed on the system:
 
 ## Installing
 
-1. Clone the repository
+#### 1. Clone the repository
 
 ```
 git clone git@github.com:guiishida/SportsHub.git
 ```
 
-2. Create and setup the database
+#### 2. Create and setup the database
 
 Run the following commands to create and setup the database.
 
@@ -41,9 +41,10 @@ rake db:setup
 ```
 
 db:create --> creates the database for the current env
+
 db:setup --> runs db:schema:load (loads the schema.rb file into to current env's database) and db:seed (populate the db with the data inside the db/seeds.rb file)
 
-3. Start the Rails Server
+#### 3. Start the Rails Server
 
 You can start the rails server using the command below.
 
