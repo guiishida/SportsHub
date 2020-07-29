@@ -1,23 +1,30 @@
-%h1 Listing sports
+.container2
+  %h1= t('.title')
 
-%table
-  %thead
-    %tr
-      %th Code
-      %th Name
-      %th
-      %th
-      %th
-
-  %tbody
-    - @sports.each do |sport|
+  %table.table.table-bordered
+    %thead.thead-dark
       %tr
-        %td= sport.code
-        %td= sport.name
-        %td= link_to 'Show', sport
-        %td= link_to 'Edit', edit_sport_path(sport)
-        %td= link_to 'Destroy', sport, method: :delete, data: { confirm: 'Are you sure?' }
+        %th= t('.code')
+        %th= t('.name')
+        %th
+        %th
+        %th
+    %br
+    %tbody
+      - @sports.each do |sport|
+        %tr
+          %td= sport.code
+          %td= sport.name
+          %td.text-center= link_to t('common.show'), sport, class: "button btn btn-light small"
+          %td.text-center= link_to t('common.edit'), edit_sport_path(sport), class: "button btn btn-light small"
+          %td.text-center= link_to t('common.delete'), sport, method: :delete, data: { confirm: t('common.delete_confirmation') }, class: "button btn btn-light small"
 
-%br
+  %br
 
-= link_to 'New Sport', new_sport_path
+  %a.button.btn.btn-light.special.big{:href => new_sport_path}= t('sports.new_sport')
+
+  %br 
+  %br
+
+  - if notice
+    %p.alert.alert-success#notice= notice

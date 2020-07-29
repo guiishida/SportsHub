@@ -1,12 +1,21 @@
-%p#notice= notice
+.container2
+  - if notice
+    %p.alert.alert-success#notice= notice
 
-%p
-  %b Code:
-  = @sport.code
-%p
-  %b Name:
-  = @sport.name
+  %h1= t('.title') 
 
-= link_to 'Edit', edit_sport_path(@sport)
-\|
-= link_to 'Back', sports_path
+  %p.pt-3
+    %b= t('.code') 
+    = @sport.code
+  %p
+    %b= t('.name') 
+    = @sport.name
+
+  %a.button.small{:href => edit_sport_path(@sport)}= t('common.edit')
+  
+  %br
+
+  .pt-4
+    %a{:href => sports_path} 
+      %i.fas.fa-arrow-alt-circle-left
+      = t('common.back')

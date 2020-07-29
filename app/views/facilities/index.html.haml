@@ -1,25 +1,33 @@
-%h1 Listing facilities
+.container2
+  %h1= t('.title')
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Mode
-      %th Sport
-      %th
-      %th
-      %th
-
-  %tbody
-    - @facilities.each do |facility|
+  %table.table.table-bordered
+    %thead.thead-dark
       %tr
-        %td= facility.name
-        %td= facility.mode
-        %td= facility.sport
-        %td= link_to 'Show', facility
-        %td= link_to 'Edit', edit_facility_path(facility)
-        %td= link_to 'Destroy', facility, method: :delete, data: { confirm: 'Are you sure?' }
+        %th= t('.name')
+        %th= t('.mode')
+        %th= t('.sport')
+        %th
+        %th
+        %th
+    %br
+    %tbody
+      - @facilities.each do |facility|
+        %tr
+          %td= facility.name
+          %td= facility.mode
+          %td= facility.sport.name
+          %td.text-center= link_to t('common.show'), facility, class: "button btn btn-light small"
+          %td.text-center= link_to t('common.edit'), edit_facility_path(facility), class: "button btn btn-light small"
+          %td.text-center= link_to t('common.delete'), facility, method: :delete, data: { confirm: t('common.delete_confirmation') }, class: "button btn btn-light small"
 
-%br
+  %br
 
-= link_to 'New Facility', new_facility_path
+  %a.button.btn.btn-light.special.big{:href => new_facility_path}= t('facilities.new_facility')
+
+  %br 
+  %br
+
+  - if notice
+    %p.alert.alert-success#notice= notice
+

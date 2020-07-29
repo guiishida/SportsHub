@@ -1,15 +1,24 @@
-%p#notice= notice
+.container2
+  - if notice
+    %p.alert.alert-success#notice= notice
 
-%p
-  %b Name:
-  = @facility.name
-%p
-  %b Mode:
-  = @facility.mode
-%p
-  %b Sport:
-  = @facility.sport
+  %h1= t('.title')
 
-= link_to 'Edit', edit_facility_path(@facility)
-\|
-= link_to 'Back', facilities_path
+  %p.pt-3
+    %b= t('.name')
+    = @facility.name
+  %p
+    %b= t('.mode')
+    = @facility.mode
+  %p
+    %b= t('.sport')
+    = @facility.sport.name
+
+  %a.button.small{:href => edit_facility_path(@facility)}= t('common.edit')
+
+  %br
+
+  .pt-4
+    %a{:href => facilities_path} 
+      %i.fas.fa-arrow-alt-circle-left
+      = t('common.back')

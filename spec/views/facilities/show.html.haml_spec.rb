@@ -5,7 +5,10 @@ RSpec.describe "facilities/show", type: :view do
     @facility = assign(:facility, Facility.create!(
       name: "Name",
       mode: "Mode",
-      sport: nil
+      sport: Sport.create!(
+          code: 12,
+          name: "Tennis"
+      )
     ))
   end
 
@@ -13,6 +16,5 @@ RSpec.describe "facilities/show", type: :view do
     render
     expect(rendered).to match(/Name/)
     expect(rendered).to match(/Mode/)
-    expect(rendered).to match(//)
   end
 end

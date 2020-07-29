@@ -1,24 +1,32 @@
-%p#notice= notice
+.container-booking
+  .wrap-login100
+    %span.login100-form-title.mt-3
+      = t('.info_reservation')
+    %p.pt-4
+      %b= t('.date')
+      = @booking.date.strftime("%d/%m/%y")
+    %p
+      %b= t('.status')
+      = @booking.status
+    %p
+      %b= t('.sport')
+      = @booking.sport.name
+    %p
+      %b= t('.facility')
+      = @booking.facility.name
+    %p
+      %b= t('.start_time')
+      = @booking.timeslot.start_time.strftime("%H:%M")
+    %p
+      %b= t('.end_time')
+      = @booking.timeslot.end_time.strftime("%H:%M")
+      
+    - if notice
+      %p.alert.alert-success#notice= notice
 
-%p
-  %b Date:
-  = @booking.date
-%p
-  %b Status:
-  = @booking.status
-%p
-  %b Sport:
-  = @booking.sport.name
-%p
-  %b Facility:
-  = @booking.facility.name
-%p
-  %b Start Time:
-  = @booking.timeslot.start_time.strftime("%I:%M")
-%p
-  %b End Time:
-  = @booking.timeslot.end_time.strftime("%I:%M")
+    %a{:href => bookings_path} 
+      %i.fas.fa-arrow-alt-circle-left
+      = t('bookings.reservations') 
 
-= link_to 'Edit', edit_booking_path(@booking)
-\|
-= link_to 'Back', bookings_path
+      
+

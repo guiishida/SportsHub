@@ -17,10 +17,15 @@ RSpec.describe "/bookings", type: :request do
   # adjust the attributes here as well.
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
+  #    {date: "2020-07-05", status: "Booked", sport: Sport.create!(code: 200, name: "Tennis"), 
+  #    facility: Facility.create!(name: "Central Court", mode: "Outdoor", sport: (Sport.create!(code: 300, name: "Football"))),
+  #    timeslot: Timeslot.create!(code: 15, weekday: 5, start_time: "2000-01-01 22:05:52", end_time: "2000-01-01 23:05:52"), 
+  #    user: User.create!(email: "aaa@gmail.com", password: "ooooooooooo123", name: "Guilherme", telephone: "19997640987", numeroUSP: 9354323)}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    skip("Add a hash of attributes valid for your model")
+    # {date: nil, status: nil, sport: nil, facility: nil, timeslot: nil, user: nil}
   }
 
   describe "GET /index" do
@@ -39,12 +44,13 @@ RSpec.describe "/bookings", type: :request do
     end
   end
 
-  describe "GET /new" do
-    it "renders a successful response" do
-      get new_booking_url
-      expect(response).to be_successful
-    end
-  end
+  #since we dont use the form anymore we wont test like this 
+  # describe "GET /new" do
+  #   it "renders a successful response" do
+  #     get new_booking_url
+  #     expect(response).to be_successful
+  #   end
+  # end
 
   describe "GET /edit" do
     it "render a successful response" do

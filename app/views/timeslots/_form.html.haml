@@ -1,22 +1,26 @@
 = form_for @timeslot do |f|
-  - if @timeslot.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@timeslot.errors.count, "error")} prohibited this timeslot from being saved:"
-      %ul
-        - @timeslot.errors.full_messages.each do |message|
-          %li= message
+  .pt-3
+    - if @timeslot.errors.any?
+      #error_explanation.alert.alert-danger
+        %h2= t 'timeslots.errors', count: @timeslot.errors.count
+        %ul
+          - @timeslot.errors.full_messages.each do |message|
+            %li= message
 
-  .field
-    = f.label :code
-    = f.number_field :code
-  .field
-    = f.label :weekday
-    = f.number_field :weekday
-  .field
-    = f.label :start_time
-    = f.time_select :start_time
-  .field
-    = f.label :end_time
-    = f.time_select :end_time
-  .actions
-    = f.submit 'Save'
+    .field.form-group
+      = f.label :code
+      = f.number_field :code, class: "form-control"
+    .field.form-group
+      = f.label :weekday
+      = f.number_field :weekday, class: "form-control"
+    .field.form-group
+      = f.label :start_time
+      %br
+      = f.time_select :start_time, class: "form-control"
+    .field.form-group
+      = f.label :end_time
+      %br
+      = f.time_select :end_time, class: "form-control"
+    %br
+    .actions
+      = f.submit t('common.save'), class: "button btn btn-light special medium"

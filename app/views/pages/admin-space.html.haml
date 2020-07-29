@@ -1,0 +1,23 @@
+%section#one.wrapper.style1.special
+  .container
+    %header.major
+      %h2.pb-2= t('.title')
+      %p.pt-2= t('.subtitle_8')
+    %a.button.button-admin.special.big{:href => sports_path}= t('.sports')
+    %a.pr-4.mr-4.pl-4.ml-4.button.button-admin.special.big{:href => facilities_path}= t('.facilities')
+    %a.button.button-admin.special.big{:href => timeslots_path}= t('.timeslots')
+
+%footer#footer
+  .container
+    %ul.icons
+      %li
+        %a.icon{:href => "#"}
+          %i.fab.fa-facebook
+      %li
+        %a.icon{:href => "https://www.linkedin.com/in/guilhermeishida/"}
+          %i.fab.fa-linkedin
+      %li
+        %a.icon{:href => "https://github.com/guiishida/SportsHub"}
+          %i.fab.fa-github
+    %ul.copyright
+      %li=t('powered_by')

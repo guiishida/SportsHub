@@ -16,11 +16,11 @@ RSpec.describe "/sports", type: :request do
   # Sport. As you add validations to Sport, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {code: 12, name: "Tennis"}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {code: nil, name: nil}
   }
 
   describe "GET /index" do
@@ -85,14 +85,16 @@ RSpec.describe "/sports", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {code: 13, name: "Squash"}
       }
 
       it "updates the requested sport" do
         sport = Sport.create! valid_attributes
         patch sport_url(sport), params: { sport: new_attributes }
         sport.reload
-        skip("Add assertions for updated state")
+        #skip("Add assertions for updated state")
+        expect(sport.name).to eq("Squash")
+        expect(sport.code).to eq(13)
       end
 
       it "redirects to the sport" do

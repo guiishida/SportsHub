@@ -1,18 +1,27 @@
-%p#notice= notice
+.container2
+  - if notice
+    %p.alert.alert-success#notice= notice
 
-%p
-  %b Code:
-  = @timeslot.code
-%p
-  %b Weekday:
-  = @timeslot.weekday
-%p
-  %b Start time:
-  = @timeslot.start_time
-%p
-  %b End time:
-  = @timeslot.end_time
+  %h1= t('.title')
 
-= link_to 'Edit', edit_timeslot_path(@timeslot)
-\|
-= link_to 'Back', timeslots_path
+  %p.pt-3
+    %b= t('.code')
+    = @timeslot.code
+  %p
+    %b= t('.weekday')
+    = @timeslot.weekday
+  %p
+    %b= t('.start_time')
+    = @timeslot.start_time.strftime("%H:%M")
+  %p
+    %b= t('.end_time')
+    = @timeslot.end_time.strftime("%H:%M")
+
+  %a.button.small{:href => edit_timeslot_path(@timeslot)}= t('common.edit')
+
+  %br
+
+  .pt-4
+    %a{:href => timeslots_path} 
+      %i.fas.fa-arrow-alt-circle-left
+      = t('common.back')

@@ -1,5 +1,10 @@
-%h1 New sport
+.container2
 
-= render 'form'
+  %h1= t('sports.new_sport')
 
-= link_to 'Back', sports_path
+  = render 'form'
+
+  .pt-4
+    %a{:href => sports_path} 
+      %i.fas.fa-arrow-alt-circle-left
+      = t('common.back')

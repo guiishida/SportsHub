@@ -1,27 +1,34 @@
-%h1 Listing timeslots
+.container2
+  %h1= t('.title')
 
-%table
-  %thead
-    %tr
-      %th Code
-      %th Weekday
-      %th Start time
-      %th End time
-      %th
-      %th
-      %th
-
-  %tbody
-    - @timeslots.each do |timeslot|
+  %table.table.table-bordered
+    %thead.thead-dark
       %tr
-        %td= timeslot.code
-        %td= timeslot.weekday
-        %td= timeslot.start_time
-        %td= timeslot.end_time
-        %td= link_to 'Show', timeslot
-        %td= link_to 'Edit', edit_timeslot_path(timeslot)
-        %td= link_to 'Destroy', timeslot, method: :delete, data: { confirm: 'Are you sure?' }
+        %th= t('.code')
+        %th= t('.weekday')
+        %th= t('.start_time')
+        %th= t('.end_time')
+        %th
+        %th
+        %th
+    %br
+    %tbody
+      - @timeslots.each do |timeslot|
+        %tr
+          %td= timeslot.code
+          %td= timeslot.weekday
+          %td= timeslot.start_time.strftime("%H:%M")
+          %td= timeslot.end_time.strftime("%H:%M")
+          %td.text-center= link_to t('common.show'), timeslot, class: "button btn btn-light small"
+          %td.text-center= link_to t('common.edit'), edit_timeslot_path(timeslot), class: "button btn btn-light small"
+          %td.text-center= link_to t('common.delete'), timeslot, method: :delete, data: { confirm: t('common.delete_confirmation') }, class: "button btn btn-light small"
 
-%br
+  %br
 
-= link_to 'New Timeslot', new_timeslot_path
+  %a.button.btn.btn-light.special.big{:href => new_timeslot_path}= t('timeslots.new_timeslot')
+
+  %br 
+  %br
+
+  - if notice
+    %p.alert.alert-success#notice= notice

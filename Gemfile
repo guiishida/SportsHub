@@ -47,9 +47,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
-  gem 'haml'
-  gem 'haml-rails'
-
 end
 
 group :test do
@@ -68,10 +65,16 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'haml'
+gem 'haml-rails'
 gem 'devise'
 gem 'erb2haml', group: :development
 gem 'high_voltage', '~> 3.1'
 
-gem 'bootstrap-sass', '~> 3.4.1'
+gem 'bootstrap', '~> 4.3.1'
+gem 'font_awesome5_rails'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'jquery-rails'
+
+gem 'rails-i18n'
+gem 'flag-icons-rails'

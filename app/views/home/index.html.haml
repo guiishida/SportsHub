@@ -1,6 +1,58 @@
-%h1 Bem-vindos ao USPorts Hub!
+- if notice
+  %p.flash-messages.alert.alert-success#notice= notice
+%body.landing
+  %section#banner
+    %h2= t('.platform')
+    %p 
+      =t('.subtitle_1')
+      %br/
+      =t('.subtitle_2')
+    %ul.actions
+      %li
+        %a.button.btn.btn-light.special.big{:href => new_booking_path}= t('.book')
 
-%h2 A plataforma para conectar a comunidade USP nas práticas esportivas! 
+  %section#one.wrapper.style1
+    .container{:class => "75%"}
+      .row{:class => "200%"}
+        .6u{:class => "12u$(medium)"}
+          %header.major
+            %h2= t('name')
+            %p= t('.subtitle_3')
+        %div{:class => "6u$ 12u$(medium)"}
+          %p.text-justify= t('.motivation_1')
+          %p.text-justify= t('.motivation_2')
+
+  %section#two.wrapper.style3.special
+    .container
+      %header.major
+        %h2= t('.questions')
+        %h3#specific_color= t('.subtitle_4')
+      %ul.actions
+        %li
+          %a.button.btn.btn-light.special.big{:href => page_path('contato')}= t('.contact_us')
+
+  %footer#footer
+    .container
+      %ul.icons
+        %li
+          %a.icon{:href => "#"}
+            %i.fab.fa-facebook
+        %li
+          %a.icon{:href => "https://www.linkedin.com/in/guilhermeishida/"}
+            %i.fab.fa-linkedin
+        %li
+          %a.icon{:href => "https://github.com/guiishida/SportsHub"}
+            %i.fab.fa-github
+      %ul.copyright
+        %li= t('powered_by')
+          
+          
+
+      
+            
+            
+        
+
   
 
 

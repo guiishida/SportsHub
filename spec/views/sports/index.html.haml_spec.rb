@@ -4,19 +4,18 @@ RSpec.describe "sports/index", type: :view do
   before(:each) do
     assign(:sports, [
       Sport.create!(
-        code: 2,
-        name: "Name"
+        code: 1,
+        name: "Cricket"
       ),
       Sport.create!(
         code: 2,
-        name: "Name"
+        name: "Hockey"
       )
     ])
   end
 
   it "renders a list of sports" do
     render
-    assert_select "tr>td", text: 2.to_s, count: 2
-    assert_select "tr>td", text: "Name".to_s, count: 2
+    expect(response).to match('code\":2')
   end
 end

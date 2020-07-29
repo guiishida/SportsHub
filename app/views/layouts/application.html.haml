@@ -5,30 +5,63 @@
     %title SportsHub
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %p.navbar-text{align: :right}
-      - if user_signed_in?
-        Entrou com 
-        %strong= current_user.email
-        = link_to 'Editar', edit_user_registration_path
-        = link_to 'Sair', destroy_user_session_path,
-                          method: :delete
-      - else
-        = link_to 'Entrar', new_user_session_path
-        = link_to 'Cadastrar', new_user_registration_path
+    %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+      %a.navbar-brand{:href => home_index_path}
+        %img.d-inline-block.align-top{:alt => "", :height => "30", :src => "#", :width => "30"}/
+        =t('name')
+      %button.navbar-toggler{"aria-controls" => "navbarNavAltMarkup", "aria-expanded" => "false", "aria-label" => "Alterna navegação", "data-target" => "#navbarNavAltMarkup", "data-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon
+      
+      #navbarNav.collapse.navbar-collapse
+        %ul.navbar-nav.mr-auto.my-1
+          %li.nav-item.active
+            %a.nav-link{:href => home_index_path}
+              = t('navbar.home')
+              %span.sr-only (Página atual)
+          %li.nav-item
+            %a.nav-link{:href => page_path('cepe')}= t('navbar.cepe')
+          %li.nav-item
+            %a.nav-link{:href => page_path('booking')}= t('navbar.booking')
+          %li.nav-item
+            %a.nav-link{:href => '#'}= t('navbar.finder')
+          %li.nav-item
+            %a.nav-link{:href => page_path('contato')}= t('navbar.contact')
+          - if user_signed_in?
+            -if current_user.email == "admin@sportshub.com.br"
+              %li.nav-item
+                %a.nav-link{:href => page_path('admin-space')}= t('navbar.admin')
 
-      - if notice
-        %p.notice = notice
-      - if alert
-        %p.alert = alert
-    
-    %p.navbar-text{align: :left}
-      = link_to 'USPorts Hub', home_index_path
-      = link_to 'CEPE', page_path('cepe')
-      = link_to 'Reservar uma Quadra Esportiva', bookings_path
-      = link_to 'Encontrar uma Partida', "#"
-      = link_to 'Contato', page_path('contato')
-        
+        %ul.navbar-nav.ml-auto.my-2
+
+          %li.nav-item.dropdown
+            %a#navbarDropdownMenuLink-4.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown"}
+              %i.fas.fa-globe-americas
+              = t('navbar.languages')
+            .dropdown-menu.dropdown-menu-right.dropdown-info{"aria-labelledby" => "navbarDropdownMenuLink-4"}
+              %a.dropdown-item{:href => root_path(locale: 'pt-BR')} 
+                = t('navbar.portuguese')
+              %a.dropdown-item{:href => root_path(locale: :en)} 
+                = t('navbar.english')  
+
+          - if user_signed_in?
+            %li.nav-item.dropdown
+              %a#navbarDropdownMenuLink-4.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown"}
+                %i.fas.fa-user
+                = t('navbar.profile')
+              .dropdown-menu.dropdown-menu-right.dropdown-info{"aria-labelledby" => "navbarDropdownMenuLink-4"}
+                %a.dropdown-item{:href => edit_user_registration_path} 
+                  %i.fas.fa-edit
+                  = t('navbar.edit')
+                %a.dropdown-item{"data-method" => "delete", :href => destroy_user_session_path} 
+                  %i.fas.fa-sign-out-alt
+                  = t('navbar.sign_out')    
+          - else
+            %li.nav-item.mr-3
+              %a.btn.btn-light{:href => new_user_session_path, :role => "button"}= t('navbar.sign_in')
+            %li.nav-item
+              %a.btn.btn-light{:href => new_user_registration_path, :role => "button"}= t('navbar.register')
+
     = yield

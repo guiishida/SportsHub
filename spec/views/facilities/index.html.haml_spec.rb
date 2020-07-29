@@ -4,22 +4,26 @@ RSpec.describe "facilities/index", type: :view do
   before(:each) do
     assign(:facilities, [
       Facility.create!(
-        name: "Name",
-        mode: "Mode",
-        sport: nil
+        name: "Central Court",
+        mode: "Outdoor",
+        sport: Sport.create!(
+          code: 1,
+          name: "Tennis"
+        )
       ),
       Facility.create!(
-        name: "Name",
-        mode: "Mode",
-        sport: nil
+        name: "Maracana",
+        mode: "Outdoor",
+        sport: Sport.create!(
+          code: 2,
+          name: "Football"
+        )
       )
     ])
   end
 
   it "renders a list of facilities" do
     render
-    assert_select "tr>td", text: "Name".to_s, count: 2
-    assert_select "tr>td", text: "Mode".to_s, count: 2
-    assert_select "tr>td", text: nil.to_s, count: 2
+    expect(response).to match('name\":\"Maracana\"')
   end
 end
