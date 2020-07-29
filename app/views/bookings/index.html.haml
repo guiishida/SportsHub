@@ -1,0 +1,47 @@
+
+.container2
+
+  - if notice
+    %p.alert.alert-success#notice= notice
+
+  %h1= t('bookings.reservations') 
+
+  %table.table.table-bordered
+    %thead.thead-dark
+      %tr
+        %th= t('bookings.date') 
+        %th= t('bookings.status') 
+        %th= t('bookings.sport') 
+        %th= t('bookings.facility') 
+        %th= t('bookings.start_time') 
+        %th= t('bookings.end_time') 
+        %th
+    %br
+    %tbody
+      - current_user.bookings.order('date DESC').each do |booking|
+        -if booking.date < Date.today
+          %tr.past-reservations
+            %td= booking.date.strftime("%d/%m/%y")
+            %td= booking.status
+            %td= booking.sport.name
+            %td= booking.facility.name
+            %td= booking.timeslot.start_time.strftime("%H:%M")
+            %td= booking.timeslot.end_time.strftime("%H:%M")
+            %td.text-center= link_to t('common.delete'), booking, method: :delete, data: { confirm: t('common.delete_confirmation') }, class: "button btn btn-light small"
+        -else
+          %tr
+            %td= booking.date.strftime("%d/%m/%y")
+            %td= booking.status
+            %td= booking.sport.name
+            %td= booking.facility.name
+            %td= booking.timeslot.start_time.strftime("%H:%M")
+            %td= booking.timeslot.end_time.strftime("%H:%M")
+            %td.text-center= link_to t('common.delete'), booking, method: :delete, data: { confirm: t('common.delete_confirmation') }, class: "button btn btn-light small"
+
+  %br
+
+  %a.button.btn.btn-light.special.big{:href => new_booking_path}= t('bookings.new_booking') 
+
+  %br 
+
+  

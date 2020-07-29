@@ -1,0 +1,33 @@
+.container2
+  %h1= t('.title')
+
+  %table.table.table-bordered
+    %thead.thead-dark
+      %tr
+        %th= t('.name')
+        %th= t('.mode')
+        %th= t('.sport')
+        %th
+        %th
+        %th
+    %br
+    %tbody
+      - @facilities.each do |facility|
+        %tr
+          %td= facility.name
+          %td= facility.mode
+          %td= facility.sport.name
+          %td.text-center= link_to t('common.show'), facility, class: "button btn btn-light small"
+          %td.text-center= link_to t('common.edit'), edit_facility_path(facility), class: "button btn btn-light small"
+          %td.text-center= link_to t('common.delete'), facility, method: :delete, data: { confirm: t('common.delete_confirmation') }, class: "button btn btn-light small"
+
+  %br
+
+  %a.button.btn.btn-light.special.big{:href => new_facility_path}= t('facilities.new_facility')
+
+  %br 
+  %br
+
+  - if notice
+    %p.alert.alert-success#notice= notice
+

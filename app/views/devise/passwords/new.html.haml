@@ -1,0 +1,13 @@
+.container-login100
+  .wrap-login100
+    %span.login100-form-title.mt-3
+      Esqueceu sua Senha?
+    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .wrap-input100.mt-3
+        .field.form-group
+          = f.label :email, class: "label-input100"
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"
+      .actions.wrap-input100.form-group.wrap-button_location.pt-1
+        = f.submit "Enviar Senha Temporária", class: "button btn btn-light special medium"
+      = render "devise/shared/links"

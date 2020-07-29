@@ -1,0 +1,26 @@
+= form_for @timeslot do |f|
+  .pt-3
+    - if @timeslot.errors.any?
+      #error_explanation.alert.alert-danger
+        %h2= t 'timeslots.errors', count: @timeslot.errors.count
+        %ul
+          - @timeslot.errors.full_messages.each do |message|
+            %li= message
+
+    .field.form-group
+      = f.label :code
+      = f.number_field :code, class: "form-control"
+    .field.form-group
+      = f.label :weekday
+      = f.number_field :weekday, class: "form-control"
+    .field.form-group
+      = f.label :start_time
+      %br
+      = f.time_select :start_time, class: "form-control"
+    .field.form-group
+      = f.label :end_time
+      %br
+      = f.time_select :end_time, class: "form-control"
+    %br
+    .actions
+      = f.submit t('common.save'), class: "button btn btn-light special medium"

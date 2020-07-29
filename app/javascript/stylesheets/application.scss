@@ -1,0 +1,16 @@
+@import "bootstrap";
+@import "bootstrap/scss/bootstrap.scss";
+@import '@fortawesome/fontawesome-free';
+
+@import "home";
+@import "registration";
+@import "bookings";
+
+
+.container2{
+    margin: 40px;
+}
+
+.button-admin{
+    width: 250px;
+}

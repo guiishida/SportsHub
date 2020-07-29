@@ -1,0 +1,11 @@
+.container2
+  
+  %h1= t('.title')
+
+  = render 'form'
+
+  .pt-4
+    %a{:href => facilities_path} 
+      %i.fas.fa-arrow-alt-circle-left
+      = t('common.back')
+    

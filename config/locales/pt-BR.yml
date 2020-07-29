@@ -1,0 +1,237 @@
+pt-BR:
+
+  name: "USPorts Hub"
+  powered_by: "© Distribuído por: Guilherme Ishida e Lui Damianci"
+
+  navbar:
+    home: "Home"
+    cepe: "Informações CEPE"
+    booking: "Reservar uma Quadra"
+    finder: "Encontrar uma Partida"
+    contact: "Contato"
+    admin: "Espaço Admin"
+    profile: "Perfil"
+    edit: "Editar Conta"
+    sign_out: "Sair"
+    sign_in: "Entrar"
+    register: "Cadastrar"
+    language: "Línguas"
+    portuguese: "Português"
+    english: "English"
+
+  home:
+    index:
+      platform: "USPorts HUB"
+      subtitle_1: "A plataforma para conectar a comunidade USP"
+      subtitle_2: "nas práticas esportivas!"
+      book: "Reserve uma Quadra"
+
+      subtitle_3: "Uma iniciativa de conectar os praticantes de esporte da USP" 
+      motivation_1: "A platforma USPorts Hub foi desenvolvida pelos alunos Guilherme Tadashi Ishida e Lui Damianci como projeto da disciplina MAC0218 - Técnicas de Programação 2. A disciplina tem como objetivo introduzir conceitos importantes na construção de software como serviço (saas) que são aplicados ao desenvolver o projeto."
+      motivation_2: "A motivação por trás do USPorts Hub é a dificuldade em encontrar pessoas para praticar esportes fora do contexto das equipes de competição. O objetivo dessa platforma é conectar essas pessoas que desejam praticar esportes sem necessariamente integrar uma equipe, além de permitir também a reserva individual das quadras do CEPEUSP, o que facilita o planejamento e a organização das pessoas."
+
+      questions: "Alguma Pergunta?"
+      subtitle_4: "Estamos aqui para responder qualquer dúvida ou pergunta que você tiver!"
+      contact_us: "Entrar em Contato"
+  
+  pages:
+    cepe:
+      cepeusp: "CEPEUSP"
+      subtitle_1: "Centro de Práticas Esportivas da"
+      subtitle_2: "Universidade de São Paulo"
+
+      mission: "MISSÃO DO CEPE"
+      mission_text1: "O Centro de Práticas Esportivas da Universidade de São Paulo - CEPEUSP foi criado com a finalidade de planejar, coordenar, executar e avaliar a prática de atividades físicas e esportivas de alunos, docentes, funcionários e respectivos dependentes."
+      mission_text2: "A missão do CEPEUSP é oferecer à comunidade universitária programas de educação física, esporte, recreação e oportunidade de prática voluntária de atividades físicas, visando ao bem-estar, à melhoria da qualidade de vida e à sua integração, estendendo à comunidade externa na medida de suas possibilidades."
+
+      infrastructure: "Infraestrutura do CEPEUSP"
+      subtitle_5: "Com uma área de 514.244 metros quadrados, o CEPEUSP dispõe de uma infraestrutura com quadras e equipamentos para a prática de diversas atividades físicas e esportivas."
+      gates: "1 - Portarias I & II"
+      aquatics: "2 - Conjunto Aquático"
+      stadium: "3 - Estádio"
+      football_field: "4 - Campos de Futebol"
+      beach_football_field: "5 - Campo de Futebol Areia"
+      multiuse_space: "6 - Espaço Multiúso/Nuri"
+      changing_room: "7 - Vestiários, Lanchonete"
+      athletics: "8 - Pista de Atletismo"
+      cycling: "9 - Velódromo"
+      outdoor_courts: "10 - Quadras Externas"
+      indoor_courts: "11 - Quadras Cobertas"
+      tennis: "12 - Quadras de Tênis"
+      lane: "13 - Raia Olímpica"
+
+      more_info: "Interessadx na História do CEPEUSP?"
+      subtitle_6: "Visite a página oficial do CEPEUSP para mais informações!"
+      go_to_cepe: "Ir para o site do CEPEUSP"
+    
+    booking:
+      manage_reservations: "Gerenciar Reservas"
+      subtitle_7: "Consulte seu Histórico de Reservas ou Efetue uma Nova Reserva!"
+      my_reservations: "Minhas Reservas"
+      book_facility: "Reservar uma Quadra"
+
+    contato:
+      title: "Contato"
+      address_label: "Endereço"
+      address_text: "Praça 02, Prof. Rubião Meira, 61 - Cidade Universitária, São Paulo, SP - CEP 05508 110"
+      opening_hours_label: "Horário de Funcionamento do CEPEUSP"
+      opening_week: "Segunda a sexta-feira: 6h30 - 21h30"
+      opening_saturday: "Sábado:  8h - 17h30"
+      opening_sunday: "Domingo: 8h - 17h"
+      email_title: "Email para Contato"
+      email: "cepeusp@usp.br"
+
+    admin-space:
+      title: "Espaço Admin"
+      subtitle_8: "Consulte e Crie novas entradas para Esportes, Locais e Horários"
+      sports: "Esportes"
+      facilities: "Locais"
+      timeslots: "Horários"
+
+  common:
+    show: "Mostrar"
+    edit: "Editar"
+    delete: "Apagar"
+    delete_confirmation: "Você tem certeza? A operação não poderá ser desfeita."
+    back: "Voltar"
+    save: "Salvar"
+
+  bookings:
+    reservations: "Minhas Reservas"
+    date: "Data"
+    status: "Estado"
+    sport: "Esporte"
+    facility: "Local"
+    start_time: "Horário de Início"
+    end_time: "Horário de Término"
+    new_booking: "Nova Reserva"
+    
+    errors:
+      one: "1 erro proibiu essa reserva de ser salva:"
+      other: "%{count} erros proibiram essa reserva de ser salva:"
+
+    new:
+      booked: "Reservado"
+      availability: "Verificar Disponibilidade"
+      confirm: "Confirmar Reserva"
+
+    show:
+      info_reservation: "Informações da Reserva"
+      date: "Data:"
+      status: "Estado:"
+      sport: "Esporte:"
+      facility: "Local:"
+      start_time: "Horário de Início:"
+      end_time: "Horário de Término:"
+
+  
+  sports:
+    new_sport: "Novo Esporte"
+    
+    errors:
+      one: "1 erro proibiu esse esporte de ser salvo:"
+      other: "%{count} erros proibiram esse esporte de ser salvo:"
+
+    index:
+      title: "Esportes"
+      code: "Código"
+      name: "Nome"
+
+    show:
+      title: "Esporte"
+      code: "Código:"
+      name: "Nome:"
+    
+    edit:
+      title: "Editar Esporte"
+
+  
+  timeslots:
+    new_timeslot: "Novo Horário"
+    
+    errors:
+      one: "1 erro proibiu esse horário de ser salvo:"
+      other: "%{count} erros proibiram esse horário de ser salvo:"
+
+    index:
+      title: "Horários"
+      code: "Código"
+      weekday: "Dia da Semana"
+      start_time: "Horário de Início"
+      end_time: "Horário de Término"
+    
+    show:
+      title: "Horário"
+      code: "Código:"
+      weekday: "Dia da Semana:"
+      start_time: "Horário de Início:"
+      end_time: "Horário de Término:"
+    
+    edit:
+      title: "Editar Horário"
+
+  
+  facilities:
+    new_facility: "Novo Local"
+
+    errors:
+      one: "1 erro proibiu esse local de ser salvo:"
+      other: "%{count} erros proibiram esse local de ser salvo:"
+
+    index:
+      title: "Locais"
+      name: "Nome"
+      mode: "Tipo"
+      sport: "Esporte"
+    
+    show:
+      title: "Local"
+      name: "Nome:"
+      mode: "Tipo:"
+      sport: "Esporte:"
+
+    edit:
+      title: "Editar Local"
+
+  #Textos para os Modelos
+
+  activerecord:
+    attributes:
+      sport:
+        code: "Código"
+        name: "Nome"
+      
+      facility:
+        name: "Nome"
+        mode: "Tipo (Outdoor ou Indoor)"
+        sport: "Esporte"
+      
+      timeslot:
+        code: "Código"
+        weekday: "Dia da Semana (0 = Domingo, 1 = Segunda ... 6 = Sábado)"
+        start_time: "Horário de Início"
+        end_time: "Horário de Término"
+      
+      booking:
+        date: "Data"
+        status: "Estado"
+        sport: "Esporte"
+        facility: "Local"
+        timeslot: "Horário"
+
+
+
+
+      
+
+      
+
+
+
+
+
+
+
+
+
+

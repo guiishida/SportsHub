@@ -1,0 +1,45 @@
+%section#one.wrapper.style1
+  .container{:class => "75%"}
+    .row{:class => "200%"}
+      %h1= t('.title')
+      .6u{:class => "12u$(medium)"}
+        %h2.mt-2= t('.address_label')
+        %i.fas.fa-map-marker-alt 
+        = t('.address_text')
+
+        %br
+        %br
+        %br
+
+        %h2= t('.opening_hours_label')
+        %i.fas.fa-clock
+        = t('.opening_week')
+        %br
+        %i.fas.fa-clock 
+        = t('.opening_saturday')
+        %br
+        %i.fas.fa-clock
+        = t('.opening_sunday')
+
+        %br
+        %br
+        %br
+
+        %h2= t('.email_title')
+        %i.fas.fa-envelope
+        = t('.email')
+
+%footer#footer
+  .container
+    %ul.icons
+      %li
+        %a.icon{:href => "#"}
+          %i.fab.fa-facebook
+      %li
+        %a.icon{:href => "https://www.linkedin.com/in/guilhermeishida/"}
+          %i.fab.fa-linkedin
+      %li
+        %a.icon{:href => "https://github.com/guiishida/SportsHub"}
+          %i.fab.fa-github
+    %ul.copyright
+      %li=t('powered_by')

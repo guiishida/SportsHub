@@ -1,0 +1,27 @@
+.container2
+  - if notice
+    %p.alert.alert-success#notice= notice
+
+  %h1= t('.title')
+
+  %p.pt-3
+    %b= t('.code')
+    = @timeslot.code
+  %p
+    %b= t('.weekday')
+    = @timeslot.weekday
+  %p
+    %b= t('.start_time')
+    = @timeslot.start_time.strftime("%H:%M")
+  %p
+    %b= t('.end_time')
+    = @timeslot.end_time.strftime("%H:%M")
+
+  %a.button.small{:href => edit_timeslot_path(@timeslot)}= t('common.edit')
+
+  %br
+
+  .pt-4
+    %a{:href => timeslots_path} 
+      %i.fas.fa-arrow-alt-circle-left
+      = t('common.back')

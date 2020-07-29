@@ -1,0 +1,22 @@
+= form_for @facility do |f|
+  .pt-3
+    - if @facility.errors.any?
+      #error_explanation.alert.alert-danger
+        %h2= t 'facilities.errors', count: @facility.errors.count
+        %ul
+          - @facility.errors.full_messages.each do |message|
+            %li= message
+
+    .field.form-group
+      = f.label :name
+      = f.text_field :name, class: "form-control"
+    .field.form-group
+      = f.label :mode
+      = f.text_field :mode, class: "form-control"
+    .field.form-group
+      = f.label :sport
+      %br
+      = f.collection_select :sport_id, Sport.order(:name), :id, :name, class: "form-control"
+    %br
+    .actions
+      = f.submit t('common.save'), class: "button btn btn-light special medium"

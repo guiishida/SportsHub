@@ -1,0 +1,45 @@
+=javascript_pack_tag 'bookings'
+- if notice
+  %p.flash-messages.alert.alert-success#notice= notice
+.container-booking
+  .wrap-booking
+    %span.login100-form-title.mt-3
+      = t('bookings.new_booking')
+    = form_for @booking do |f|
+      - if @booking.errors.any?
+        .pt-4
+          #error_explanation.alert.alert-danger
+            %h2.text-center= t 'bookings.errors', count: @booking.errors.count
+            %ul
+              - @booking.errors.full_messages.each do |message|
+                %li= message
+      .wrap-input100.mt-4
+        .field.form-group
+          = f.label :date, class: "label-input100"
+          = f.date_select :date, :start_year => 2020, :order => [:day, :month, :year], class: "form-control"
+        .field.form-group
+          = f.label :sport, class: "label-input100"
+          = f.collection_select :sport_id, Sport.order(:name), :id, :name, class: "form-control"
+        .field.form-group
+          = f.label :facility, class: "label-input100"
+          = f.grouped_collection_select :facility_id, Sport.order(:name), :facilities, :name, :id, :name, class: "form-control"
+        .field
+          = f.hidden_field :status, value: "Booked"
+
+      %br
+      .actions.wrap-input100.form-group.wrap-button_location.pt-1
+        %button.generate{type: 'button', class: "button btn btn-light special medium"}= t('.availability')
+        
+      %br
+        
+      .field.form-group
+        %table.table.table-bordered#availabilities{:border => 1}
+            
+      %br
+      .actions.wrap-input100.form-group.wrap-button_location.pt-1
+        = f.submit t('.confirm'), class: "button btn btn-light special medium"
+
+      %a{:href => bookings_path} 
+        %i.fas.fa-arrow-alt-circle-left
+        = t('bookings.reservations') 
+      

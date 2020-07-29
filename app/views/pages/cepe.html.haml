@@ -1,0 +1,66 @@
+%section#banner2
+  %h2= t('.cepeusp')
+  %p
+    = t('.subtitle_1')
+    %br/
+    = t('.subtitle_2')
+
+%section#one.wrapper.style1
+  .container{:class => "75%"}
+    .row{:class => "200%"}
+      .6u{:class => "12u$(medium)"}
+        %header.major
+          %h2= t('.mission')
+      %div{:class => "6u$ 12u$(medium)"}
+        %p.text-justify= t('.mission_text1')
+        %p.text-justify= t('.mission_text2') 
+
+%section#two.wrapper.style2.special
+  .container
+    %header.major
+      %h2= t('.infrastructure') 
+      %p.mt-1= t('.subtitle_5') 
+    .row{:class => "150%"}
+      .6u{:class => "12u$(xsmall)"}
+        .image.fit
+          =image_tag "cepe_infra.jpg"
+      %div{:class => "6u$ 12u$(xsmall)"}
+        %p= t('.gates') 
+        %p= t('.aquatics')  
+        %p= t('.stadium')  
+        %p= t('.football_field')  
+        %p= t('.beach_football_field')  
+        %p= t('.multiuse_space')  
+        %p= t('.changing_room') 
+        %p= t('.athletics')  
+        %p= t('.cycling')  
+        %p= t('.outdoor_courts')  
+        %p= t('.indoor_courts')  
+        %p= t('.tennis')  
+        %p= t('.lane')  
+
+%section#four.wrapper.style4.special
+  .container
+    %header.major
+      %h2= t('.more_info') 
+      %h3#specific_color= t('.subtitle_6') 
+    %ul.actions
+      %li
+        %a.button.btn.btn-light.special.big{:href => "http://www.cepe.usp.br/"}= t('.go_to_cepe') 
+
+%footer#footer
+  .container
+    %ul.icons
+      %li
+        %a.icon{:href => "#"}
+          %i.fab.fa-facebook
+      %li
+        %a.icon{:href => "https://www.linkedin.com/in/guilhermeishida/"}
+          %i.fab.fa-linkedin
+      %li
+        %a.icon{:href => "https://github.com/guiishida/SportsHub"}
+          %i.fab.fa-github
+    %ul.copyright
+      %li= t('powered_by')
+
+

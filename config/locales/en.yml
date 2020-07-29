@@ -30,4 +30,226 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+
+  name: "USPorts Hub"
+  powered_by: "© Powered by: Guilherme Ishida and Lui Damianci"
+
+  navbar:
+    home: "Home"
+    cepe: "CEPE's Information"
+    booking: "Book a Facility"
+    finder: "Find a Match"
+    contact: "Contact Us"
+    admin: "Admin Area"
+    profile: "Profile"
+    edit: "Edit Account"
+    sign_out: "Sign Out"
+    sign_in: "Sign In"
+    register: "Register"
+    language: "Language"
+    portuguese: "Português"
+    english: "English"
+
+  home:
+    index:
+      platform: "USPorts HUB"
+      subtitle_1: "The platform to connect the USP community"
+      subtitle_2: "in sports practice!"
+      book: "Book a Facility"
+
+      subtitle_3: "An initiative to connect USP sports practitioners" 
+      motivation_1: "The USPorts Hub platform was developed by students Guilherme Tadashi Ishida and Lui Damianci as the final project for the discipline MAC0218 - Programming Techniques 2. The course aims to introduce important concepts related to building software as a service (saas) that are applied when developing the project."
+      motivation_2: "The motivation behind USPorts Hub is the difficulty in finding people to play sports outside of the competitive sphere. The purpose of this platform is to connect those people who want to play sports without necessarily joining a team, as well as allowing the individual reservation of CEPEUSP courts, which facilitates people's planning and organization."
+
+      questions: "Any Questions?"
+      subtitle_4: "We would love to help you with any questions or inquiries you might have!"
+      contact_us: "Contact Us"
+  
+  pages:
+    cepe:
+      cepeusp: "CEPEUSP"
+      subtitle_1: "Sports Center of the"
+      subtitle_2: "University of Sao Paulo"
+
+      mission: "CEPE Mission"
+      mission_text1: "The Sports Center of the University of Sao Paulo - CEPEUSP was created with the purpose of planning, coordinating, executing and evaluating the practice of physical and sports activities of students, teachers, employees and their dependents."
+      mission_text2: "CEPEUSP's mission is to offer the university members programs of physical education, sport, recreation and the opportunity to practice physical activities in order to improve quality of life and well-being, extending the services to all members of the public as far as possible."
+
+      infrastructure: "CEPEUSP infrastructure"
+      subtitle_5: "With an area of ​​514,244 square meters, CEPEUSP has an infrastructure with courts and equipment for the practice of various physical and sports activities."
+      gates: "1 - Gates I & II"
+      aquatics: "Aquatics"
+      stadium: "3 - Stadium"
+      football_field: "4 - Football Fields"
+      beach_football_field: "5 - Beach Football Field"
+      multiuse_space: "6 - Multipurpose/Nuri Space"
+      changing_room: "7 - Changing Room, Diner"
+      athletics: "8 - Athletics track"
+      cycling: "9 - Velodrome"
+      outdoor_courts: "10 - Outdoor Courts"
+      indoor_courts: "11 - Indoor Courts"
+      tennis: "12 - Tennis Courts"
+      lane: "13 - Olympic Lane"
+
+      more_info: "Want to know more about the CEPEUSP?"
+      subtitle_6: "Visit the official CEPEUSP website for more information!"
+      go_to_cepe: "Go to the CEPEUSP website"
+
+    booking:
+      manage_reservations: "Manage Reservations"
+      subtitle_7: "Check your Booking History or Make a New Booking!"
+      my_reservations: "My Reservations"
+      book_facility: "Book a Facility"
+    
+    contato:
+      title: "Contact Us"
+      address_label: "Address"
+      address_text: "Praça 02, Prof. Rubião Meira, 61 - Cidade Universitária, São Paulo, SP - CEP 05508 110"
+      opening_hours_label: "CEPEUSP Opening Hours"
+      opening_week: "Monday to Friday: 6h30 - 21h30"
+      opening_saturday: "Saturday:  8h - 17h30"
+      opening_sunday: "Sunday: 8h - 17h"
+      email_title: "Email to Contact Us"
+      email: "cepeusp@usp.br"
+    
+    admin-space:
+      title: "Admin Area"
+      subtitle_8: "Consult and Create new entries for Sports, Facilities and Timeslots"
+      sports: "Sports"
+      facilities: "Facilities"
+      timeslots: "Timeslots"
+  
+  common:
+    show: "Show"
+    edit: "Edit"
+    delete: "Delete"
+    delete_confirmation: "Are you sure? The operation can't be undone."
+    back: "Back"
+    save: "Save"
+
+  bookings:
+    reservations: "My Reservations"
+    date: "Date"
+    status: "Status"
+    sport: "Sport"
+    facility: "Facility"
+    start_time: "Start Time"
+    end_time: "End Time"
+    new_booking: "New Reservation"
+    
+    errors:
+      one: "1 error prohibited this booking from being saved:"
+      other: "%(count) errors prohibited this booking from being saved:"
+
+    new: 
+      booked: "Booked"
+      availability: "Verify Availability"
+      confirm: "Confirm Reservation"
+    
+    show:
+      info_reservation: "Informations on the Reservation"
+      date: "Date:"
+      status: "Status:"
+      sport: "Sport:"
+      facility: "Facility:"
+      start_time: "Start Time:"
+      end_time: "End Time:"
+    
+  sports:
+    new_sport: "New Sport"
+    
+    errors:
+      one: "1 error prohibited this sport from being saved:"
+      other: "%(count) errors prohibited this sport from being saved:"
+
+    index:
+      title: "Sports"
+      code: "Code"
+      name: "Name"
+    
+    show:
+      title: "Sport"
+      code: "Code:"
+      name: "Name:"
+    
+    edit:
+      title: "Edit Sport"
+
+  
+  timeslots:
+    new_timeslot: "New Timeslot"
+    
+    errors:
+      one: "1 error prohibited this timeslot from being saved:"
+      other: "%(count) errors prohibited this timeslot from being saved:"
+
+    index:
+      title: "Timeslots"
+      code: "Code"
+      weekday: "Weekday"
+      start_time: "Start Time"
+      end_time: "End Time"
+    
+    show:
+      title: "Timeslot"
+      code: "Code:"
+      weekday: "Weekday:"
+      start_time: "Start Time:"
+      end_time: "End Time:"
+
+    edit:
+      title: "Edit Timeslot"
+
+  
+  facilities:
+    new_facility: "New Facility"
+    
+    errors:
+      one: "1 error prohibited this facility from being saved:"
+      other: "%(count) errors prohibited this facility from being saved:"
+
+    index:
+      title: "Facilities"
+      name: "Name"
+      mode: "Mode"
+      sport: "Sport"
+
+    show:
+      title: "Facility"
+      name: "Name:"
+      mode: "Mode:"
+      sport: "Sport:"
+
+    edit:
+      title: "Edit Facility"
+
+  
+  #Textos para os Modelos
+
+  activerecord:
+    attributes:
+      sport:
+        code: "Code"
+        name: "Name"
+      
+      facility:
+        name: "Name"
+        mode: "Mode (Outdoor or Indoor)"
+        sport: "Sport"
+
+      timeslot:
+        code: "Code"
+        weekday: "Weekday (0 = Sunday, 1 = Monday ... 6 = Saturday)"
+        start_time: "Start Time"
+        end_time: "End Time"
+      
+      booking:
+        date: "Date"
+        status: "Status"
+        sport: "Sport"
+        facility: "Facility"
+        timeslot: "Timeslot"
+
+      
+      
+      

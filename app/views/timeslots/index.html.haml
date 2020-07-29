@@ -1,0 +1,34 @@
+.container2
+  %h1= t('.title')
+
+  %table.table.table-bordered
+    %thead.thead-dark
+      %tr
+        %th= t('.code')
+        %th= t('.weekday')
+        %th= t('.start_time')
+        %th= t('.end_time')
+        %th
+        %th
+        %th
+    %br
+    %tbody
+      - @timeslots.each do |timeslot|
+        %tr
+          %td= timeslot.code
+          %td= timeslot.weekday
+          %td= timeslot.start_time.strftime("%H:%M")
+          %td= timeslot.end_time.strftime("%H:%M")
+          %td.text-center= link_to t('common.show'), timeslot, class: "button btn btn-light small"
+          %td.text-center= link_to t('common.edit'), edit_timeslot_path(timeslot), class: "button btn btn-light small"
+          %td.text-center= link_to t('common.delete'), timeslot, method: :delete, data: { confirm: t('common.delete_confirmation') }, class: "button btn btn-light small"
+
+  %br
+
+  %a.button.btn.btn-light.special.big{:href => new_timeslot_path}= t('timeslots.new_timeslot')
+
+  %br 
+  %br
+
+  - if notice
+    %p.alert.alert-success#notice= notice
